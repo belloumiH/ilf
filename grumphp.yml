@@ -24,4 +24,4 @@ parameters:
             whitelist_patterns:
                 - /^src\/(.*)/
             triggered_by: ['php']
-#        phpcsfixer: ~
+        phpcsfixer: ~
