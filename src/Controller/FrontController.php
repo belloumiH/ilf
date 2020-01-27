@@ -1,16 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class FrontController.
+ */
 class FrontController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @return mixed
      */
-    public function index()
+    public function index(Request $request)
     {
         return $this->render('Front/index.html.twig', [
             'controller_name' => 'HomeController',
