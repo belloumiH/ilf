@@ -1,0 +1,3 @@
+back.index:
+  path: /index
+  controller: App\Controller\BackController::index

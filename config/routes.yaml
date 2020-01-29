@@ -1,3 +1,6 @@
 app.ilf.front:
-  resource: '../src/Resources/config/routes/front.yaml'
+  resource: '../src/Resources/routes/front.yaml'
   prefix: /{language}
+app.ilf.back:
+  resource: '../src/Resources/routes/back.yaml'
+  prefix: /admin
