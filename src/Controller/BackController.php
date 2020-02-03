@@ -17,6 +17,6 @@ class BackController extends AbstractController
      */
     public function index(Request $request)
     {
-        return $this->render('Back/AdminLTE-3.0.2/index.html.twig', []);
+        return $this->render('Back/index.html.twig', []);
     }
 }
