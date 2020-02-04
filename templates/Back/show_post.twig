@@ -1,0 +1,152 @@
+{% extends 'Back/base/base.twig' %}
+{% block namePageBreadcrumb %} Post {% endblock %}
+{% block activePost %} active {% endblock %}
+{% block section %}
+    <!-- Main content -->
+    <section class="content">
+        <div class="card" id="project-add">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>POST</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            {# <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Project Add</li>
+                            </ol> #}
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Add post
+                                </h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body hide">
+                                <form method="post" action="{{ path('insert.post') }}">
+                                    <div class="form-group">
+                                        <label for="postLabel">post label</label>
+                                        <input type="text" id="postLabel" name="postLabel" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="#" id="bt-cancel" class="btn btn-secondary">Cancel</a>
+                                            <input type="submit" value="Add" class="btn btn-success float-right">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            List post
+                        </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Post ID</th>
+                                <th>label</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for post in posts %}
+                                <tr>
+                                    <td>
+                                        {{ post.id }}
+                                    </td>
+                                    <td>
+                                        {{ post.label }}
+                                    </td>
+                                    <td>
+                                        {{ post.isEnabled() ?'enable':'disable' }}
+                                    </td>
+                                    <td class="list-of-floating-elements" style="width: 25%;">
+                                        <a class="btn btn-info"
+                                           href="{{ path('enable.post',{'idPost' : post.id }) }}"><i
+                                                    class="fas fa-check"></i></a>
+                                        <a class="btn btn-danger"
+                                           href="{{ path('disable.post',{'idPost' : post.id }) }}"><i
+                                                    class="fa fa-trash"></i></a>
+                                        <button type="button" class="btn btn-default" data-toggle="modal"
+                                                data-target="#modal-default-{{ post.id }}">
+                                            <i class="fa fa-pen"></i>
+                                        </button>
+                                        <div class="modal fade" id="modal-default-{{ post.id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Update Post : {{ post.id }}</h4>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <input type="text" name="post-label"
+                                                               id="input_label_{{ post.id }}"
+                                                               value="{{ post.label }}">
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                        <input type="submit"
+                                                               data-input-id="{{ post.id }}"
+                                                               data-input-label="input_label_{{ post.id }}"
+                                                               class="btn btn-primary update-post-class"
+                                                               value="Save changes">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            {# <tfoot>
+                            <tr>
+                                <th>Rendering engine</th>
+                                <th>Browser</th>
+                                <th>Platform(s)</th>
+                                <th>Engine version</th>
+                                <th>CSS grade</th>
+                            </tr>
+                            </tfoot> #}
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+{% endblock %}

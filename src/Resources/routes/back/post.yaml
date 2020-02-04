@@ -1,0 +1,23 @@
+show.post:
+  path: /post
+  controller: App\Controller\Back\PostController::showPost
+  options:
+    expose: true
+
+insert.post:
+  path: /insert-post
+  controller: App\Controller\Back\PostController::insertPost
+
+update.post:
+  path: /update-post/{idPost}
+  controller: App\Controller\Back\PostController::updatePost
+  options:
+    expose: true
+
+enable.post:
+  path: /enable-post/{idPost}
+  controller: App\Controller\Back\PostController::enablePost
+
+disable.post:
+  path: /disable-post/{idPost}
+  controller: App\Controller\Back\PostController::disablePost

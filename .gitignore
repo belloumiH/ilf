@@ -5,8 +5,16 @@
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
-/var/
 /vendor/
+/var/cache/*
+/var/log/*
+/var/uploads/*
+/public/uploads/*
+!var/uploads/.gitkeep
+!var/cache/.gitkeep
+!var/log/.gitkeep
+!public/uploads/.gitkeep
+
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
