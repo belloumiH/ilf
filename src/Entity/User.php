@@ -1,15 +1,13 @@
 <?php
 
-namespace App\Entity\Back;
+namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
- *
- * @author  Haythem Belloumi <h.belloumi@autobiz.com>
+ * @ORM\Table(name="ilf_user")
  */
 class User extends BaseUser
 {

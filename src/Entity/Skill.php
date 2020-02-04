@@ -2,26 +2,21 @@
 
 declare(strict_types=1);
 
-namespace App\Entity\Back;
+namespace App\Entity;
 
+use App\Traits\EntityIdTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Skill.
  *
  * @ORM\Table(name="skill")
- * @ORM\Entity(repositoryClass="App\Repository\Back\SkillRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SkillRepository")
  */
 class Skill
 {
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id", type="bigint")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
+    use EntityIdTrait;
+    use EntityEnableTrait;
 
     /**
      * @var string|null
@@ -29,11 +24,6 @@ class Skill
      * @ORM\Column(name="label", type="string", length=255, nullable=true)
      */
     private $label;
-
-    public function getId(): int
-    {
-        return $this->id;
-    }
 
     public function getLabel(): ?string
     {

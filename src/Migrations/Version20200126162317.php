@@ -22,12 +22,9 @@ final class Version20200126162317 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf('mysql' != $this->connection->getDatabasePlatform()->getName(), 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('INSERT INTO skill(label) VALUES ("PHP")');
-        $this->addSql('INSERT INTO skill(label) VALUES ("C++")');
-
         $this->addSql(
             'INSERT INTO
-            fos_user(username,username_canonical,email,email_canonical,enabled,salt,password,roles)
+            ilf_user(username,username_canonical,email,email_canonical,enabled,salt,password,roles)
              VALUES ("adminIlf",
              "adminilf",
              "haythem.belloumi@gmail.com",
