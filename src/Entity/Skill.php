@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Traits\EntityEnableTrait;
 use App\Traits\EntityIdTrait;
 use Doctrine\ORM\Mapping as ORM;
 

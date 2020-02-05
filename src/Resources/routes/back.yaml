@@ -1,11 +1,7 @@
+app_bo_files_routes:
+    resource: './back/'
+    type:     directory
+
 back.index:
   path: /index
   controller: App\Controller\BackController::index
-
-insert.skill:
-  path: /insert-skill
-  controller: App\Controller\BackController::insertSkill
-
-insert.offer:
-  path: /insert-offer
-  controller: App\Controller\BackController::insertOffer

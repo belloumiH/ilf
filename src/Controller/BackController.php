@@ -27,13 +27,35 @@ class BackController extends AbstractController
     /**
      * @return mixed
      */
+    public function showSkill(Request $request)
+    {
+        $skills = $this->getDoctrine()
+            ->getRepository(Skill::class)
+            ->findAll();
+
+        return $this->render('Back/show-skill.twig', [
+            'skills' => $skills,
+        ]);
+    }
+
+    /**
+     * @return mixed
+     */
     public function insertSkill(Request $request)
     {
-        $skill = new Skill();
-        $skill->setLabel('css');
-        $skill = $this->insert($skill);
+        if ($request->isMethod('post')) {
+            // Get one post data
+            $skillLabel = (string) $request->get('skillLabel');
+            // Get all post data
+            // $data = $request->request->all();
+            if (true === isset($skillLabel) && '' != $skillLabel) {
+                $skill = new Skill();
+                $skill->setLabel($skillLabel);
+                $skill = $this->insert($skill);
+            }
+        }
 
-        return new Response('Saved new skill with id '.$skill->getId());
+        return $this->forward('App\Controller\BackController::showSkill', []);
     }
 
     /**

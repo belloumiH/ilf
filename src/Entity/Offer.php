@@ -43,6 +43,13 @@ class Offer
     private $img;
 
     /**
+     * @var string|null
+     *
+     * @ORM\Column(name="address", type="string", length=255, nullable=true)
+     */
+    private $address;
+
+    /**
      * @ORM\OneToMany(targetEntity="OfferSkill", cascade={"persist", "remove"}, mappedBy="offer")
      */
     private $skills;

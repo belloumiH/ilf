@@ -27,7 +27,7 @@ trait EntityEnableTrait
     /**
      * Enable row.
      */
-    final public function Enabled()
+    final public function enabled()
     {
         $this->enabled = true;
     }
@@ -35,7 +35,7 @@ trait EntityEnableTrait
     /**
      * Disable row.
      */
-    final public function Disabled()
+    final public function disabled()
     {
         $this->enabled = false;
     }

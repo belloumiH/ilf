@@ -1,0 +1,354 @@
+{% extends 'Back/base/base.twig' %}
+{% block section%}
+<!-- Main content -->
+<section class="content">
+    <div class="content">
+    <!-- Small boxes (Stat box) -->
+    <div class="row">
+        <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-info">
+            <div class="inner">
+            <h3>150</h3>
+
+            <p>Offers List</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+        <!-- small box -->
+        <div class="small-box bg-success">
+            <div class="inner">
+            <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+            <p>Subscriber Numbers</p>
+            </div>
+            <div class="icon">
+            <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+    <section class="content">
+    <div class="card" id="project-add">
+    <section class="content-header">
+    <div class="container-fluid">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+        <h1>Project Add</h1>
+        </div>
+        <div class="col-sm-12">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Project Add</li>
+        </ol>
+        </div>
+    </div>
+    </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">General</h3>
+
+            <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+            <label for="inputName">Project Name</label>
+            <input type="text" id="inputName" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="inputDescription">Project Description</label>
+            <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+            <label for="inputStatus">Status</label>
+            <select class="form-control custom-select">
+                <option selected disabled>Select one</option>
+                <option>On Hold</option>
+                <option>Canceled</option>
+                <option>Success</option>
+            </select>
+            </div>
+            <div class="form-group">
+            <label for="inputClientCompany">Client Company</label>
+            <input type="text" id="inputClientCompany" class="form-control">
+            </div>
+            <div class="form-group">
+            <label for="inputProjectLeader">Project Leader</label>
+            <input type="text" id="inputProjectLeader" class="form-control">
+            </div>
+        </div>
+        <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    
+    </div>
+    <div class="row">
+    <div class="col-12">
+        <a href="#" id="bt-cancel" class="btn btn-secondary">Cancel</a>
+        <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+    </div>
+    </div>
+    </section>
+    </div>
+    <div class="row">
+    <div class="col-12">
+        <div class="card">
+        <div class="card-header">
+            <h3 class="card-title"></h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>Offer ID</th>
+                <th>Offer name</th>
+                <th>desccription</th>
+                <th>Client</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Gecko</td>
+                <td>Netscape Navigator 9</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.0</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.1</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.1</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.2</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.2</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.3</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.3</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.4</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.4</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>    
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.5</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.5</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.6</td>
+                <td>Win 95+ / OSX.1+</td>
+                <td>1.6</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.7</td>
+                <td>Win 98+ / OSX.1+</td>
+                <td>1.7</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Mozilla 1.8</td>
+                <td>Win 98+ / OSX.1+</td>
+                <td>1.8</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Seamonkey 1.1</td>
+                <td>Win 98+ / OSX.2+</td>
+                <td>1.8</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Gecko</td>
+                <td>Epiphany 2.20</td>
+                <td>Gnome</td>
+                <td>1.8</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>Safari 1.2</td>
+                <td>OSX.3</td>
+                <td>125.5</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>Safari 1.3</td>
+                <td>OSX.3</td>
+                <td>312.8</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>Safari 2.0</td>
+                <td>OSX.4+</td>
+                <td>419.3</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>Safari 3.0</td>
+                <td>OSX.4+</td>
+                <td>522.1</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>OmniWeb 5.5</td>
+                <td>OSX.4+</td>
+                <td>420</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Webkit</td>
+                <td>iPod Touch / iPhone</td>
+                <td>iPod</td>
+                <td>420.1</td>
+                <td class="list-of-floating-elements">
+                    <a  class="btn btn-info" href=""><i class="fas fa-eye"></i></a>
+                    <a  class="btn btn-success" href=""><i class="fa fa-list"></i></a>
+                    <a align="center" class="btn btn-danger floated" href=""><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th>Rendering engine</th>
+                <th>Browser</th>
+                <th>Platform(s)</th>
+                <th>Engine version</th>
+                <th>CSS grade</th>
+            </tr>
+            </tfoot>
+            </table>
+        </div>
+        <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </div>
+    <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
+{% endblock %}

@@ -1,0 +1,3 @@
+insert.offer:
+  path: /insert-offer
+  controller: App\Controller\BackController::insertOffer
