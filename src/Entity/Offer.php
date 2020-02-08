@@ -50,6 +50,13 @@ class Offer
     private $address;
 
     /**
+     * @var bool|null
+     *
+     * @ORM\Column(name="ilf_ind", type="boolean", options={"default" : false})
+     */
+    private $ilfInd = true;
+
+    /**
      * @ORM\OneToMany(targetEntity="OfferSkill", cascade={"persist", "remove"}, mappedBy="offer")
      */
     private $skills;
@@ -57,18 +64,6 @@ class Offer
     public function __construct()
     {
         $this->skills = new ArrayCollection();
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(?string $title): Offer
-    {
-        $this->title = $title;
-
-        return $this;
     }
 
     /**
@@ -83,5 +78,105 @@ class Offer
     {
         $this->skills->add($skill);
         $skill->setOffer($this);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string|null $title
+     *
+     * @return Offer
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string|null $description
+     *
+     * @return Offer
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param string|null $img
+     *
+     * @return Offer
+     */
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @param string|null $address
+     *
+     * @return Offer
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getIlfInd()
+    {
+        return $this->ilfInd;
+    }
+
+    /**
+     * @param bool|null $ilfInd
+     *
+     * @return Offer
+     */
+    public function setIlfInd($ilfInd)
+    {
+        $this->ilfInd = $ilfInd;
+
+        return $this;
     }
 }

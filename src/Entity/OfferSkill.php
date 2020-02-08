@@ -23,6 +23,13 @@ class OfferSkill
     private $offer;
 
     /**
+     * @var int|null
+     *
+     * @ORM\Column(name="skill_id", type="bigint", nullable=true)
+     */
+    private $skillId;
+
+    /**
      * @var string|null
      *
      * @ORM\Column(name="label", type="string", length=255, nullable=true)
@@ -49,6 +56,21 @@ class OfferSkill
     public function setOffer(?Offer $offer): OfferSkill
     {
         $this->offer = $offer;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSkillId()
+    {
+        return $this->skillId;
+    }
+
+    public function setSkillId(?int $skillId): OfferSkill
+    {
+        $this->skillId = $skillId;
 
         return $this;
     }

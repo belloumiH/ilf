@@ -22,7 +22,7 @@ class SkillController extends AbstractController
             ->getRepository(Skill::class)
             ->findAll();
 
-        return $this->render('Back/show-skill.twig', [
+        return $this->render('Back/show_skill.twig', [
             'skills' => $skills,
         ]);
     }
@@ -91,26 +91,26 @@ class SkillController extends AbstractController
     }
 
     /**
+     * @param mixed $object
+     *
      * @return mixed
      */
-    public function insert($opject)
+    public function insert($object)
     {
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->persist($opject);
+        $entityManager->persist($object);
         $entityManager->flush();
 
-        return $opject;
+        return $object;
     }
 
     /**
+     * @param mixed $object
+     *
      * @return mixed
      */
-    public function update($opject)
+    public function update($object)
     {
-        $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->merge($opject);
-        $entityManager->flush();
-
-        return $opject;
+        return $this->insert($object);
     }
 }

@@ -1,5 +1,7 @@
 imports:
     - { resource: parameters.yaml }
+    - { resource: ../src/Resources/parameters.yaml }
+    - { resource: ../src/Resources/services.yaml }
 # This file is the entry point to configure your own services.
 # Files in the packages/ subdirectory configure your dependencies.
 

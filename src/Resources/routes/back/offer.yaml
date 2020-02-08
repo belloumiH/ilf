@@ -1,3 +1,23 @@
+show.offer:
+  path: /offer
+  controller: App\Controller\Back\OfferController::show
+
 insert.offer:
   path: /insert-offer
-  controller: App\Controller\BackController::insertOffer
+  controller: App\Controller\Back\OfferController::add
+
+show.update:
+  path: /show-update-offer/{idOffer}
+  controller: App\Controller\Back\OfferController::ShowUpdate
+
+update.offer:
+  path: /update-offer
+  controller: App\Controller\Back\OfferController::updateA
+
+enable.offer:
+  path: /enable-offer/{idOffer}
+  controller: App\Controller\Back\OfferController::enable
+
+disable.offer:
+  path: /disable-offer/{idOffer}
+  controller: App\Controller\Back\OfferController::disable
