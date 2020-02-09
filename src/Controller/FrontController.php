@@ -17,7 +17,7 @@ class FrontController extends AbstractController
      */
     public function index(Request $request)
     {
-        return $this->render('Front/index.html.twig', [
+        return $this->render('Front/index.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
