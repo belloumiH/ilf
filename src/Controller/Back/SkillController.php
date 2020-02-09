@@ -7,6 +7,7 @@ namespace App\Controller\Back;
 use App\Entity\Skill;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class SkillController.
@@ -47,19 +48,26 @@ class SkillController extends AbstractController
         return $this->redirectToRoute('show.skill');
     }
 
-    public function updateSkill(Request $request)
+    /**
+     * @return Response
+     */
+    public function updateSkill(Request $request, int $idSkill)
     {
-        if ($request->isMethod('post')) {
-            $skillLabel = (string) $request->get('skill-label');
-            $idSkill = (int) $request->get('skill-id');
-            $skill = $this->getDoctrine()
-                ->getRepository(Skill::class)
-                ->find($idSkill);
-            $skill->setLabel($skillLabel);
-            $skill = $this->update($skill);
-        }
+        $skill = $this->getDoctrine()
+            ->getRepository(Skill::class)
+            ->find($idSkill);
+        $skill->setLabel($request->get('value'));
+        $skill = $this->update($skill);
 
-        return $this->redirectToRoute('show.skill');
+        return new Response(
+            json_encode(
+                [
+                    'type' => 'success',
+                    'status' => '200',
+                    'message' => 'skill updated.',
+                ]
+            )
+        );
     }
 
     /**

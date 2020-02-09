@@ -1,6 +1,6 @@
 {% extends 'Back/base/base.twig' %}
-{% block namePageBreadcrumb %} Skill {% endblock %}
-{% block activeSkill %} active {% endblock %}
+{% block namePageBreadcrumb %} Post {% endblock %}
+{% block activePost %} active {% endblock %}
 {% block section %}
     <!-- Main content -->
     <section class="content">
@@ -9,7 +9,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>SKILL</h1>
+                            <h1>POST</h1>
                         </div>
                         <div class="col-sm-12">
                             {# <ol class="breadcrumb float-sm-right">
@@ -26,7 +26,7 @@
                         <div class="card card-primary collapsed-card">
                             <div class="card-header">
                                 <h3 class="card-title">
-                                    Add skill
+                                    Add post
                                 </h3>
                                 <div class="card-tools">
                                     <button type="button" class="btn btn-tool" data-card-widget="collapse"
@@ -35,10 +35,10 @@
                                 </div>
                             </div>
                             <div class="card-body hide">
-                                <form method="post" action="{{ path('insert.skill') }}">
+                                <form method="post" action="{{ path('insert.post') }}">
                                     <div class="form-group">
-                                        <label for="skillLabel">skill label</label>
-                                        <input type="text" id="skillLabel" name="skillLabel" class="form-control">
+                                        <label for="postLabel">post label</label>
+                                        <input type="text" id="postLabel" name="postLabel" class="form-control">
                                     </div>
                                     <div class="form-group">
                                     </div>
@@ -60,7 +60,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            List skill
+                            List post
                         </h3>
                     </div>
                     <!-- /.card-header -->
@@ -68,58 +68,58 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>Skill ID</th>
+                                <th>Post ID</th>
                                 <th>label</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for skill in skills %}
+                            {% for post in posts %}
                                 <tr>
                                     <td>
-                                        {{ skill.id }}
+                                        {{ post.id }}
                                     </td>
                                     <td>
-                                        {{ skill.label }}
+                                        {{ post.label }}
                                     </td>
                                     <td>
-                                        {{ skill.isEnabled() ?'enable':'disable' }}
+                                        {{ post.isEnabled() ?'enable':'disable' }}
                                     </td>
                                     <td class="list-of-floating-elements" style="width: 25%;">
                                         <a class="btn btn-info"
-                                           href="{{ path('enable.skill',{'idSkill' : skill.id }) }}"><i
+                                           href="{{ path('enable.post',{'idPost' : post.id }) }}"><i
                                                     class="fas fa-check"></i></a>
                                         <a class="btn btn-danger"
-                                           href="{{ path('disable.skill',{'idSkill' : skill.id }) }}"><i
+                                           href="{{ path('disable.post',{'idPost' : post.id }) }}"><i
                                                     class="fa fa-trash"></i></a>
                                         <button type="button" class="btn btn-default" data-toggle="modal"
-                                                data-target="#modal-default-{{ skill.id }}">
+                                                data-target="#modal-default-{{ post.id }}">
                                             <i class="fa fa-pen"></i>
                                         </button>
-                                        <div class="modal fade" id="modal-default-{{ skill.id }}">
+                                        <div class="modal fade" id="modal-default-{{ post.id }}">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Update Skill : {{ skill.id }}</h4>
+                                                        <h4 class="modal-title">Update Post : {{ post.id }}</h4>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <input type="text" name="skill-label"
-                                                               id="input_label_{{ skill.id }}"
-                                                               value="{{ skill.label }}">
+                                                        <input type="text" name="post-label"
+                                                               id="input_label_{{ post.id }}"
+                                                               value="{{ post.label }}">
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default"
                                                                 data-dismiss="modal">Close
                                                         </button>
                                                         <input type="submit"
-                                                               data-input-id="{{ skill.id }}"
-                                                               data-input-label="input_label_{{ skill.id }}"
-                                                               class="btn btn-primary update-skill-class"
+                                                               data-input-id="{{ post.id }}"
+                                                               data-input-label="input_label_{{ post.id }}"
+                                                               class="btn btn-primary update-post-class"
                                                                value="Save changes">
                                                     </div>
                                                 </div>

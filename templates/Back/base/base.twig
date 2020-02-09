@@ -215,54 +215,49 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a href="{{ path('show.post') }}"
+                                   class="nav-link {% block activePost %}{% endblock %}">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Post</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="{{ path('show.offer') }}"
                                    class="nav-link {% block activeOffer %}{% endblock %}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Offer</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="{{ asset('assets/back/index3.html') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
-                                </a>
-                            </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ asset('assets/back/pages/widgets.html') }}" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>
-                                Widgets
-                                <span class="right badge badge-danger">New</span>
-                            </p>
-                        </a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a href="{{ asset('assets/back/pages/widgets.html') }}" class="nav-link">#}
+{#                            <i class="nav-icon fas fa-th"></i>#}
+{#                            <p>#}
+{#                                Widgets#}
+{#                                <span class="right badge badge-danger">New</span>#}
+{#                            </p>#}
+{#                        </a>#}
+{#                    </li>#}
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
-                                Tables
+                                Candidate
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ asset('assets/back/pages/tables/simple.html') }}" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Simple Tables</p>
+                                    <p>Candidate Offer</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ asset('assets/back/pages/tables/data.html') }}" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>DataTables</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ asset('assets/back/pages/tables/jsgrid.html') }}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>jsGrid</p>
+                                    <p>Spontaneous Candidate</p>
                                 </a>
                             </li>
                         </ul>
@@ -319,6 +314,9 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- fosjs -->
+<script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
 <!-- jQuery -->
 <script src="{{ asset('assets/back/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
