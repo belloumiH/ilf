@@ -13,17 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 class FrontController extends AbstractController
 {
     /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
-    public function indexOne(Request $request)
-    {
-        return $this->redirectToRoute('front.index', ['languageUser' => 'fr']);
-    }
-
-    /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, string $languageUser)
     {
         return $this->render('Front/index.twig', []);
     }
