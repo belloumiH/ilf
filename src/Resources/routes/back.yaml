@@ -1,3 +1,7 @@
+app_bo_files_routes:
+    resource: './back/'
+    type:     directory
+
 back.index:
   path: /index
   controller: App\Controller\BackController::index

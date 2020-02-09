@@ -1,0 +1,23 @@
+show.skill:
+  path: /skill
+  controller: App\Controller\Back\SkillController::showSkill
+  options:
+    expose: true
+
+insert.skill:
+  path: /insert-skill
+  controller: App\Controller\Back\SkillController::insertSkill
+
+update.skill:
+  path: /update-skill/{idSkill}
+  controller: App\Controller\Back\SkillController::updateSkill
+  options:
+    expose: true
+
+enable.skill:
+  path: /enable-skill/{idSkill}
+  controller: App\Controller\Back\SkillController::enableSkill
+
+disable.skill:
+  path: /disable-skill/{idSkill}
+  controller: App\Controller\Back\SkillController::disableSkill

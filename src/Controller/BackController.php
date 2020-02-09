@@ -13,10 +13,10 @@ use Symfony\Component\HttpFoundation\Request;
 class BackController extends AbstractController
 {
     /**
-     * @return mixed
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(Request $request)
     {
-        return $this->render('Back/index.html.twig', []);
+        return $this->render('Back/index.twig', []);
     }
 }

@@ -1,0 +1,205 @@
+{% extends 'Back/base/base.twig' %}
+{% block namePageBreadcrumb %} Offer {% endblock %}
+{% block activeOffer %} active {% endblock %}
+{% block section %}
+    <!-- Main content -->
+    <section class="content">
+        <div class="card" id="project-add">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>OFFER</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            {# <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Project Add</li>
+                            </ol> #}
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary collapsed-card">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Add offer
+                                </h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body hide">
+                                <form method="post" action="{{ path('insert.offer') }}" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                        <label for="titleOffer">Title</label>
+                                        <input type="text" id="titleOffer" name="titleOffer" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" name="descriptionOffer"
+                                                  placeholder="Your description ..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea class="form-control" name="addressOffer"
+                                                  placeholder="Address ..."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Skill</label>
+                                        <select class="select2" id="skillOffer" multiple="multiple" name="skillOffer[]"
+                                                data-placeholder="Select skill"
+                                                style="width: 100%;">
+                                            {% for skill in skills %}
+                                                <option value="{{ skill.id }}">{{ skill.label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="checkIlfOffer" class="form-check-input"
+                                               id="checkIlfOffer">
+                                        <label class="form-check-label" for="checkIlfOffer">Show in ilf site</label>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Post</label>
+                                        <select class="form-control" name="postOffer">
+                                            <option value="0">-----</option>
+                                            {% for post in posts %}
+                                                <option value="{{ post.id }}">{{ post.label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <label>Picture</label>
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               class="custom-file-input"
+                                               name="offerImg"
+                                               accept=".jpg, .jpeg, .png"
+                                               id="offerImg">
+                                        <label class="custom-file-label" for="offerImg">Choose file</label>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="#" id="bt-cancel" class="btn btn-secondary">Cancel</a>
+                                            <input type="submit" value="Add" class="btn btn-success float-right">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            List offer
+                        </h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th>Offer ID</th>
+                                <th>title</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for offer in offers %}
+                                <tr>
+                                    <td>
+                                        {{ offer.id }}
+                                    </td>
+                                    <td>
+                                        {{ offer.title }}
+                                    </td>
+                                    <td>
+                                        {{ offer.isEnabled() ?'enable':'disable' }}
+                                    </td>
+                                    <td class="list-of-floating-elements" style="width: 25%;">
+                                        <a class="btn btn-info"
+                                           href="{{ path('enable.offer',{'idOffer' : offer.id }) }}"><i
+                                                    class="fas fa-check"></i></a>
+                                        <a class="btn btn-danger"
+                                           href="{{ path('disable.offer',{'idOffer' : offer.id }) }}"><i
+                                                    class="fa fa-trash"></i></a>
+                                        <a class="btn btn-success"
+                                           href="{{ path('show.update',{'idOffer' : offer.id }) }}"><i
+                                                    class="fa fa-pen"></i></a>
+                                        <button type="button" class="btn btn-warning" data-toggle="modal"
+                                                data-target="#modal-default-{{ offer.id }}">
+                                            <i class="fa fa-list"></i>
+                                        </button>
+                                        <div class="modal fade" id="modal-default-{{ offer.id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Information Offer : {{ offer.id }}</h4>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        title : {{ offer.title }}<br>
+                                                        {% if offer.getPost().getLabel() is defined and offer.getPost().getLabel() != '' %}
+                                                            Post : {{ offer.getPost().getLabel() }}<br>
+                                                        {% endif %}
+                                                        {% if offer.img is defined and offer.img != '' %}
+                                                            Picture :
+                                                            <img src="{{ asset('uploads/'~offer.img) }}" width="100px" height="100px">
+                                                        {% endif %}
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            {#                            <tfoot>#}
+                            {#                            <tr>#}
+                            {#                                <th>Rendering engine</th>#}
+                            {#                                <th>Browser</th>#}
+                            {#                                <th>Platform(s)</th>#}
+                            {#                                <th>Engine version</th>#}
+                            {#                                <th>CSS grade</th>#}
+                            {#                            </tr>#}
+                            {#                            </tfoot>#}
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+{% endblock %}

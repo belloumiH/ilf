@@ -1,0 +1,152 @@
+{% extends 'Back/base/base.twig' %}
+{% block namePageBreadcrumb %} Offer {% endblock %}
+{% block activeOffer %} active {% endblock %}
+{% block section %}
+    <!-- Main content -->
+    <section class="content">
+        <div class="card" id="project-add">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>OFFER</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            {# <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Project Add</li>
+                            </ol> #}
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">
+                                    Add offer
+                                </h3>
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                            data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body block">
+                                <form method="post" action="{{ path('update.offer') }}" enctype="multipart/form-data">
+                                    <input type="hidden" name="offerId" value="{{ offer.id }}">
+                                    <div class="form-check">
+                                        <input type="checkbox" name="enabled" class="form-check-input"
+                                               id="enabled" {{ offer.isEnabled() ?'checked':'' }}>
+                                        <label class="form-check-label" for="enabled"> Activate </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="titleOffer">Title</label>
+                                        <input type="text" id="titleOffer" name="titleOffer" class="form-control"
+                                               value="{{ offer.title }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" name="descriptionOffer"
+                                                  placeholder="Your description ...">{{ offer.description }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea class="form-control" name="addressOffer"
+                                                  placeholder="Address ...">{{ offer.address }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Skill</label>
+                                        <select class="select2" id="skillOffer" multiple="multiple" name="skillOffer[]"
+                                                data-placeholder="Select skill"
+                                                style="width: 100%;">
+                                            {% for skill in skills %}
+                                                <option value="{{ skill.id }}"
+                                                {{ skill.id in skillOfferArray ?'selected':'' }}>{{ skill.label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" name="checkIlfOffer" class="form-check-input"
+                                               id="checkIlfOffer" {{ offer.getIlfInd() ?'checked':'' }}>
+                                        <label class="form-check-label" for="checkIlfOffer">Show in ilf site</label>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Post</label>
+                                        <select class="form-control" name="postOffer">
+                                            <option value="0">-----</option>
+                                            {% for post in posts %}
+                                                <option value="{{ post.id }}"
+                                                        {% if offer.getPost().getId() is defined %}
+                                                        {{ offer.getPost().getId() is same as(post.id) ?'selected':'' }}
+                                                        {% endif %}
+                                                >
+                                                    {{ post.label }}
+                                                </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <label>Picture</label>
+                                    {% if offer.img is defined and offer.img != '' %}
+                                        <button type="button" class="btn" data-toggle="modal"
+                                                data-target="#modal-default-{{ offer.id }}">
+                                            <i class="fa fa-images"></i>
+                                        </button>
+                                        <div class="modal fade" id="modal-default-{{ offer.id }}">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Update Offer : {{ offer.id }}</h4>
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <img src="{{ asset('uploads/'~offer.img) }}" width="100%" height="100%">
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    <div class="custom-file">
+                                        <input type="file"
+                                               class="custom-file-input"
+                                               name="offerImg"
+                                               accept=".jpg, .jpeg, .png"
+                                               id="offerImg">
+                                        <label class="custom-file-label" for="offerImg">Choose file</label>
+                                    </div>
+                                    <div class="form-group">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <a href="#" id="bt-cancel" class="btn btn-secondary">Cancel</a>
+                                            <input type="submit" value="Add" class="btn btn-success float-right">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+{% endblock %}
