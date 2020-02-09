@@ -1,9 +1,13 @@
 app.ilf.front:
   resource: '../src/Resources/routes/front.yaml'
   prefix: /{languageUser}
+  requirements:
+    languageUser:  fr|en|ar
 app.ilf.back:
   resource: '../src/Resources/routes/back.yaml'
   prefix: /admin
 front.index.one:
   path: /
-  controller: App\Controller\FrontController::indexOne
+  controller: App\Controller\FrontController::index
+  defaults:
+    languageUser : 'fr'
