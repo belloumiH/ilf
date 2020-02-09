@@ -1,6 +1,9 @@
 app.ilf.front:
   resource: '../src/Resources/routes/front.yaml'
-  prefix: /{language}
+  prefix: /{languageUser}
 app.ilf.back:
   resource: '../src/Resources/routes/back.yaml'
   prefix: /admin
+front.index.one:
+  path: /
+  controller: App\Controller\FrontController::indexOne
