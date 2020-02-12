@@ -1,0 +1,5 @@
+show.candidate:
+  path: /candidate
+  controller: App\Controller\Back\CandidateController::show
+  options:
+    expose: true

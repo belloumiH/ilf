@@ -1,6 +1,8 @@
 {% extends 'Back/base/base.twig' %}
 {% block namePageBreadcrumb %} Post {% endblock %}
 {% block activePost %} active {% endblock %}
+{% block menuOpenDash %} menu-open {% endblock %}
+{% block menuOpenDashActiv %} active {% endblock %}
 {% block section %}
     <!-- Main content -->
     <section class="content">
@@ -117,8 +119,6 @@
                                                                 data-dismiss="modal">Close
                                                         </button>
                                                         <input type="submit"
-                                                               data-input-id="{{ post.id }}"
-                                                               data-input-label="input_label_{{ post.id }}"
                                                                class="btn btn-primary update-post-class"
                                                                value="Save changes">
                                                     </div>

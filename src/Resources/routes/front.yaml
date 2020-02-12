@@ -1,3 +1,11 @@
 front.index:
   path: /
   controller: App\Controller\FrontController::index
+
+front.postulate:
+  path: /postulate/{offerId}
+  controller: App\Controller\FrontController::postulate
+
+front.insert.postulate:
+  path: /insert-postulate
+  controller: App\Controller\FrontController::insertCandidateOffer
