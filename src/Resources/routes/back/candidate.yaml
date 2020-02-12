@@ -3,3 +3,9 @@ show.candidate:
   controller: App\Controller\Back\CandidateController::show
   options:
     expose: true
+
+show.candidate.by.offer:
+  path: /candidate/{offerId}
+  controller: App\Controller\Back\CandidateController::show
+  options:
+    expose: true

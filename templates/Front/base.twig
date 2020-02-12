@@ -106,7 +106,15 @@
 							</div>
 						</div>
 						<div class="col-lg-4">
-							<button class="btn-outline-darkgrey  d-none d-lg-block">Looking for Staff?</button>
+                            <select id="language_user"
+									class="btn-outline-darkgrey d-lg-block"
+									style="width: 70px;-moz-appearance: none;-webkit-appearance: none;"
+									onchange="location = this.value;">
+                                <option value="{{ path('front.index',{'languageUser' : 'fr'}) }}" {{ languageUser == 'fr' ?'selected':'' }}>FR</option>
+                                <option value="{{ path('front.index',{'languageUser' : 'en'}) }}" {{ languageUser == 'en' ?'selected':'' }}>EN</option>
+                                <option value="{{ path('front.index',{'languageUser' : 'ar'}) }}" {{ languageUser == 'ar' ?'selected':'' }}>AR</option>
+                            </select>
+{#							<button class="btn-outline-darkgrey  d-none d-lg-block">Looking for Staff?</button>#}
 						</div>
 					</div>
 				</div>

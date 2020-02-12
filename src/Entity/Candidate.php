@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Helper\Cryptor;
 use App\Traits\EntityIdTrait;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -68,48 +69,48 @@ class Candidate
 
     public function getFirstName(): ?string
     {
-        return $this->firstName;
+        return Cryptor::decrypt($this->firstName);
     }
 
     public function setFirstName(?string $firstName): Candidate
     {
-        $this->firstName = $firstName;
+        $this->firstName = Cryptor::encrypt($firstName);
 
         return $this;
     }
 
     public function getLastName(): ?string
     {
-        return $this->lastName;
+        return Cryptor::decrypt($this->lastName);
     }
 
     public function setLastName(?string $lastName): Candidate
     {
-        $this->lastName = $lastName;
+        $this->lastName = Cryptor::encrypt($lastName);
 
         return $this;
     }
 
     public function getPhone(): ?string
     {
-        return $this->phone;
+        return Cryptor::decrypt($this->phone);
     }
 
     public function setPhone(?string $phone): Candidate
     {
-        $this->phone = $phone;
+        $this->phone = Cryptor::encrypt($phone);
 
         return $this;
     }
 
     public function getMail(): ?string
     {
-        return $this->mail;
+        return Cryptor::decrypt($this->mail);
     }
 
     public function setMail(?string $mail): Candidate
     {
-        $this->mail = $mail;
+        $this->mail = Cryptor::encrypt($mail);
 
         return $this;
     }
@@ -128,12 +129,12 @@ class Candidate
 
     public function getFile(): ?string
     {
-        return $this->file;
+        return Cryptor::decrypt($this->file);
     }
 
     public function setFile(?string $file): Candidate
     {
-        $this->file = $file;
+        $this->file = Cryptor::encrypt($file);
 
         return $this;
     }

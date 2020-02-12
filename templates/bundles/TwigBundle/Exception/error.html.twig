@@ -1,15 +1,39 @@
-{#{% extends "front/base/base.html.twig" %}#}
-
-{% block title %}
-    <title>500</title>
-{% endblock %}
-
+{% extends 'Front/base.twig' %}
 {% block content %}
-    <div class="container-fluid position-relative bg-homepage p-0">
-        <div class="container px-3 py-3 px-md-4 py-md-4">
-            <h3 class="position-relative text-uppercase text-light mb-3 pb-3 font-weight-bold heading-special-error">
-                We apologize we can not give you an estimate for the moment.
-            </h3>
+    <section class="s-pt-75 s-pb-100 error-404 not-found page_404">
+        <div class="container">
+            <div class="row">
+                <div class="d-none d-lg-block divider-60"></div>
+                <div class="col-sm-12 text-center">
+                    <header class="page-header highlight">
+                        <h3>404</h3>
+                        <p class="text-uppercase">
+                            Oops, page not found!
+                        </p>
+                        <h6>
+                            Click to go home page:
+                        </h6>
+                    </header>
+                    <!-- .page-header -->
+                    <div class="page-content">
+                        <div id="search-404" class="widget widget_search">
+                            {#                            <form role="search" method="get" class="search-form" action="http://webdesign-finder.com/">#}
+                            {#                                <label for="search-form-404">#}
+                            {#                                    <span class="screen-reader-text">Search for:</span>#}
+                            {#                                </label>#}
+                            {#                                <input type="search" id="search-form-404" class="search-field" placeholder="Search keyword" value="" name="search ">#}
+                            {#                                <h6 class="page-header py-30">#}
+                            {#                                    or#}
+                            {#                                </h6>#}
+                            <p>
+                                <a href="{{ path('front.index.one') }}" class="btn btn-outline-darkgrey">Homepage</a>
+                            </p>
+                            {#                            </form>#}
+                        </div>
+                    </div>
+                    <!-- .page-content -->
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 {% endblock %}
