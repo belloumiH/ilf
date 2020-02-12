@@ -13,6 +13,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-json": "*",
+        "ext-openssl": "*",
         "doctrine/doctrine-migrations-bundle": "^2.0",
         "friendsofsymfony/jsrouting-bundle": "^2.5",
         "friendsofsymfony/user-bundle": "^2.0",

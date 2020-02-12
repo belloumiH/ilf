@@ -130,7 +130,7 @@
                             {% for offer in offers %}
                                 <tr>
                                     <td>
-                                        {{ offer.id }}
+                                        <a href="{{ path('show.candidate.by.offer', {'offerId' : offer.id}) }}">{{ offer.id }}
                                     </td>
                                     <td>
                                         {{ offer.title }}

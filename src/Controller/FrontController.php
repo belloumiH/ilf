@@ -9,6 +9,7 @@ use App\Entity\Offer;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class FrontController.
@@ -24,10 +25,14 @@ class FrontController extends AbstractController
             ->getRepository(Offer::class)
             ->findBy(['enabled' => 1]);
 
+        $projectRoot = $this->getParameter('kernel.project_dir');
+        $translations = Yaml::parseFile($projectRoot.'/translations/translation_'.$languageUser.'.yaml');
+
         return $this->render('Front/index.twig',
             [
                 'offers' => $offers,
                 'languageUser' => $languageUser,
+                'translations' => $translations,
             ]
         );
     }

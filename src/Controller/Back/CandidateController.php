@@ -16,11 +16,17 @@ class CandidateController extends AbstractController
     /**
      * @return mixed
      */
-    public function show(Request $request)
+    public function show(Request $request, int $offerId = 0)
     {
         $candidates = $this->getDoctrine()
             ->getRepository(Candidate::class)
             ->findAll();
+
+        if ((int) $offerId > 0) {
+            $candidates = $this->getDoctrine()
+                ->getRepository(Candidate::class)
+                ->findBy(['offer' => $offerId]);
+        }
 
         return $this->render('Back/show_candidate.twig', [
             'candidates' => $candidates,
