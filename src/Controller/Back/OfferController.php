@@ -123,7 +123,7 @@ class OfferController extends AbstractController
             ->find((int) $data['offerId']);
         $offer->disabled();
         if (true === isset($data['enabled']) and 'on' === (string) $data['enabled']) {
-            $offer->enable();
+            $offer->enabled();
         }
         $fileImg = $request->files->get('offerImg');
         if (null !== $fileImg) {

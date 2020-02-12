@@ -1,8 +1,8 @@
 {% extends 'Back/base/base.twig' %}
-{% block namePageBreadcrumb %} Skill {% endblock %}
-{% block activeSkill %} active {% endblock %}
-{% block menuOpenDash %} menu-open {% endblock %}
-{% block menuOpenDashActiv %} active {% endblock %}
+{% block namePageBreadcrumb %} Candidate {% endblock %}
+{% block activeCandidate %} active {% endblock %}
+{% block menuOpenCandidate %} menu-open {% endblock %}
+{% block menuOpenCandidateActiv %} active  {% endblock %}
 {% block section %}
     <!-- Main content -->
     <section class="content">
@@ -11,7 +11,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>SKILL</h1>
+                            <h1>CANDIDATE</h1>
                         </div>
                         <div class="col-sm-12">
                             {# <ol class="breadcrumb float-sm-right">
@@ -22,47 +22,13 @@
                     </div>
                 </div><!-- /.container-fluid -->
             </section>
-            <section class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card card-primary collapsed-card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    Add skill
-                                </h3>
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                            data-toggle="tooltip" title="Collapse">
-                                        <i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-                            <div class="card-body hide">
-                                <form method="post" action="{{ path('insert.skill') }}">
-                                    <div class="form-group">
-                                        <label for="skillLabel">skill label</label>
-                                        <input type="text" id="skillLabel" name="skillLabel" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <a href="#" id="bt-cancel" class="btn btn-secondary">Cancel</a>
-                                            <input type="submit" value="Add" class="btn btn-success float-right">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">
-                            List skill
+                            List candidate
                         </h3>
                     </div>
                     <!-- /.card-header -->
@@ -70,57 +36,53 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <th>Skill ID</th>
-                                <th>label</th>
-                                <th>Status</th>
+                                <th>Candidate ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>CV</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for skill in skills %}
+                            {% for candidate in candidates %}
                                 <tr>
                                     <td>
-                                        {{ skill.id }}
+                                        {{ candidate.id }}
                                     </td>
                                     <td>
-                                        {{ skill.label }}
+                                        {{ candidate.firstName }}
                                     </td>
                                     <td>
-                                        {{ skill.isEnabled() ?'enable':'disable' }}
+                                        {{ candidate.lastName }}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-info" href="{{ path('back.download',{'fileName' : candidate.file })}}"><i class="fas fa-download"></i></a>
                                     </td>
                                     <td class="list-of-floating-elements" style="width: 25%;">
-                                        <a class="btn btn-info"
-                                           href="{{ path('enable.skill',{'idSkill' : skill.id }) }}"><i
-                                                    class="fas fa-check"></i></a>
-                                        <a class="btn btn-danger"
-                                           href="{{ path('disable.skill',{'idSkill' : skill.id }) }}"><i
-                                                    class="fa fa-trash"></i></a>
                                         <button type="button" class="btn btn-default" data-toggle="modal"
-                                                data-target="#modal-default-{{ skill.id }}">
-                                            <i class="fa fa-pen"></i>
+                                                data-target="#modal-default-{{ candidate.id }}">
+                                            <i class="fa fa-list"></i>
                                         </button>
-                                        <div class="modal fade" id="modal-default-{{ skill.id }}">
+                                        <div class="modal fade" id="modal-default-{{ candidate.id }}">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title">Update Skill : {{ skill.id }}</h4>
+                                                        <h4 class="modal-title">Information Candidate : {{ candidate.id }}</h4>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <input type="text" name="skill-label"
-                                                               id="input_label_{{ skill.id }}"
-                                                               value="{{ skill.label }}">
+                                                        id : {{ candidate.id }}
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default"
                                                                 data-dismiss="modal">Close
                                                         </button>
-                                                        <input type="submit"
-                                                               class="btn btn-primary update-skill-class"
-                                                               value="Save changes">
+{#                                                        <input type="submit"#}
+{#                                                               class="btn btn-primary update-skill-class"#}
+{#                                                               value="Save changes">#}
                                                     </div>
                                                 </div>
                                             </div>

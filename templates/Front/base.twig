@@ -8,7 +8,7 @@
 
 
 <head>
-	<title>ILF CONSULTING></title>
+	<title>ILF CONSULTING</title>
 	<meta charset="utf-8">
 	<!--[if IE]>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -96,7 +96,7 @@
 						<div class="col-lg-4 text-center">
 							<div class="text-center">
 								<div class="header_logo_center">
-									<a href="#" class="logo">
+									<a href="{{ path('front.index',{'languageUser' : languageUser })}}" class="logo">
 										<span class="logo_text">CONSU</span>
 										<img src="https://www.ilf.com/wp-content/themes/jd-bootpress/custom/styles/default/images/ilf-logo.svg" alt="">
 										<span class="logo_subtext">LTING</span>
@@ -956,9 +956,10 @@
 	</div>
 	<!-- eof #canvas -->
 
-
-	
-     {% block javascript %}{% endblock %}  
+	<script src="{{ asset('assets/front/js/compressed.js') }}"></script>
+	<script src="{{ asset('assets/front/js/main.js') }}"></script>
+	<script src="{{ asset('assets/front/js/switcher.js') }}"></script>
+{#	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?"></script>#}
 	<!-- Google Map Script -->
 
 </body>

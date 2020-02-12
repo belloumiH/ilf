@@ -192,8 +192,8 @@
                     data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-open">
-                        <a href="#" class="nav-link active">
+                    <li class="nav-item has-treeview {% block menuOpenDash %} {% endblock %}">
+                        <a href="#" class="nav-link {% block menuOpenDashActiv %}  {% endblock %}">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 Dashboard
@@ -240,8 +240,8 @@
 {#                            </p>#}
 {#                        </a>#}
 {#                    </li>#}
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                    <li class="nav-item has-treeview {% block menuOpenCandidate %} {% endblock %}">
+                        <a href="#" class="nav-link {% block menuOpenCandidateActiv %}  {% endblock %}">
                             <i class="nav-icon fas fa-table"></i>
                             <p>
                                 Candidate
@@ -250,7 +250,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ path('show.candidate') }}" class="nav-link {% block activeCandidate %} {% endblock %}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Candidate Offer</p>
                                 </a>

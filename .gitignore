@@ -8,9 +8,9 @@
 /vendor/
 /var/cache/*
 /var/log/*
-/var/uploads/*
+/uploads/*
 /public/uploads/*
-!var/uploads/.gitkeep
+!uploads/.gitkeep
 !var/cache/.gitkeep
 !var/log/.gitkeep
 !public/uploads/.gitkeep

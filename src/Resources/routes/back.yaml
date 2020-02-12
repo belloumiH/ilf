@@ -5,3 +5,7 @@ app_bo_files_routes:
 back.index:
   path: /index
   controller: App\Controller\BackController::index
+
+back.download:
+  path: /download/{fileName}
+  controller: App\Controller\BackController::download
