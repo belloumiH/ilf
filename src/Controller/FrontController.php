@@ -21,16 +21,17 @@ class FrontController extends AbstractController
      */
     public function index(Request $request, string $languageUser)
     {
-        $offers = $this->getDoctrine()
-            ->getRepository(Offer::class)
-            ->findBy(['enabled' => 1]);
+//        $offers = $this->getDoctrine()
+//            ->getRepository(Offer::class)
+//            ->findBy(['enabled' => 1]);
 
         $projectRoot = $this->getParameter('kernel.project_dir');
         $translations = Yaml::parseFile($projectRoot.'/translations/translation_'.$languageUser.'.yaml');
 
-        return $this->render('Front/index.twig',
+        return $this->render('Front/coming-soon.twig',
             [
-                'offers' => $offers,
+//                'offers' => $offers,
+                'offers' => [],
                 'languageUser' => $languageUser,
                 'translations' => $translations,
             ]

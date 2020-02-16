@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /_preview*
+Disallow: *.pdf
+Sitemap: https://www.ilfconsulting.fr/sitemap.xml
