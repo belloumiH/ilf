@@ -9,3 +9,25 @@ front.postulate:
 front.insert.postulate:
   path: /insert-postulate
   controller: App\Controller\FrontController::insertCandidateOffer
+
+front.contact:
+  path: /contact
+  controller: App\Controller\FrontController::contact
+  defaults:
+    languageUser : 'fr'
+
+front.affaires:
+  path: /affaires
+  controller: App\Controller\FrontController::affaires
+  defaults:
+    languageUser : 'fr'   
+
+front.partenaires:
+  path: /partenaires
+  controller: App\Controller\FrontController::partenaires
+  defaults:
+    languageUser : 'fr'        
+
+front.insert.spontanious:
+  path: /insert-spontanious
+  controller: App\Controller\FrontController::insertCandidateSpontanious

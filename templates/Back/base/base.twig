@@ -32,6 +32,8 @@
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/front/images/ilflogo2.png') }}">
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -256,7 +258,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ path('show.spontaneous.candidate') }}" class="nav-link {% block activeSpontaneousCandidate %} {% endblock %}">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Spontaneous Candidate</p>
                                 </a>
