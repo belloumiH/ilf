@@ -37,17 +37,17 @@
         "symfony/twig-pack": "*",
         "symfony/validator": "4.4.*",
         "symfony/web-link": "4.4.*",
-        "symfony/yaml": "4.4.*"
-    },
-    "require-dev": {
+        "symfony/yaml": "4.4.*",
         "friendsofphp/php-cs-fixer": "^2.2",
         "jakub-onderka/php-parallel-lint": "^1.0",
         "phpro/grumphp": "^0.17.2",
+        "symfony/var-dumper": "4.4.*"
+    },
+    "require-dev": {
         "symfony/debug-pack": "*",
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*",
-        "symfony/var-dumper": "4.4.*"
+        "symfony/test-pack": "*"
     },
     "config": {
         "preferred-install": {

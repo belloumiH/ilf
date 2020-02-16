@@ -17423,3 +17423,8 @@ select.country_to_state.country_select.form-control.select2-hidden-accessible.ch
 .checkbox-slider--b-flat input + span:before {
 	box-shadow: none;
 }
+
+.no-padding {
+	padding-bottom: 0 !important;
+	padding-top: 0 !important;
+}
