@@ -16815,7 +16815,7 @@ footer .media a:hover {
 }
 
 .about .heading-about {
-	margin-top: 180px;
+	margin-top: 0;
 }
 
 @media (max-width: 1200px) {

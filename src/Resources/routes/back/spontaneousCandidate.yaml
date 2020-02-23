@@ -1,0 +1,5 @@
+show.spontaneous.candidate:
+  path: /spontaneous-candidate
+  controller: App\Controller\Back\SpontaneousCandidateController::show
+  options:
+    expose: true
