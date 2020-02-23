@@ -66,6 +66,7 @@ class SpontaneousCandidate
      * @ORM\JoinColumn(name="post_id", referencedColumnName="id", nullable=true)
      */
     private $post;
+
     /**
      * @var string|null
      *
@@ -174,5 +175,12 @@ class SpontaneousCandidate
     {
         $this->skills->add($skill);
         $skill->setSpontaneousCandidate($this);
+    }
+
+    public function setSkills($skills = [])
+    {
+        $this->skills = $skills;
+
+        return $this;
     }
 }

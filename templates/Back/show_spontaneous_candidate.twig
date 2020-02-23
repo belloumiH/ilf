@@ -80,13 +80,13 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        id : {{ candidate.id }}
-{#                                                        {% if candidate.getSkills().0.label is defined and candidate.getSkills()|length > 0 %}#}
-{#                                                            Skills: <br>#}
-{#                                                            {% for candidateSkills in  candidate.getSkills() %}#}
-{#                                                                {{ candidateSkills.label }},#}
-{#                                                            {% endfor %}#}
-{#                                                        {% endif %}#}
+                                                        id : {{ candidate.id }} <br>
+                                                        {% if candidate.skills is defined and candidate.skills|length > 0 %}
+                                                            Skills: <br>
+                                                            {% for candidateSkills in  candidate.skills %}
+                                                                {{ candidateSkills.label }},
+                                                            {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default"
