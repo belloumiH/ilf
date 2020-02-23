@@ -18,7 +18,7 @@ class ScandidateSkill
     use EntityIdTrait;
 
     /**
-     * @ORM\ManyToOne(targetEntity="SpontaneousCandidate", inversedBy="ScandidateSkill")
+     * @ORM\ManyToOne(targetEntity="SpontaneousCandidate", inversedBy="scandidate_skill")
      */
     private $spontaneousCandidate;
 
