@@ -73,6 +73,7 @@ class Offer
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->setCreatedAt(new \DateTime('NOW'));
     }
 
     /**

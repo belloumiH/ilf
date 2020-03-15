@@ -10,16 +10,15 @@ use App\Entity\Post;
 use App\Entity\ScandidateSkill;
 use App\Entity\Skill;
 use App\Entity\SpontaneousCandidate;
-use App\Helper\Mail;
 use Exception;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Yaml\Yaml;
 
 /**
  * Class FrontController.
  */
-class FrontController extends AbstractController
+class FrontController extends Controller
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response
@@ -111,7 +110,11 @@ class FrontController extends AbstractController
                 try {
                     $candidateFile->move(
                         $this->getParameter('uploads_private_directory'),
-                        $fileName);
+                        $fileName
+                    );
+                    //$this->get('aws_storage')->uploadFile(
+                    //    $this->getParameter('uploads_private_directory').'/'.$fileName
+                    //);
                 } catch (Exception $e) {
                     $fileName = null;
                 }
