@@ -4,6 +4,11 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Candidate;
+use App\Entity\Offer;
+use App\Entity\Post;
+use App\Entity\SpontaneousCandidate;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +23,32 @@ class BackController extends AbstractController
      */
     public function index(Request $request)
     {
-        return $this->render('Back/index.twig', []);
+        try {
+            $posts = count($this->getDoctrine()
+                ->getRepository(Post::class)
+                ->findAll());
+            $offers = count($this->getDoctrine()
+                ->getRepository(Offer::class)
+                ->findAll());
+            $candidate = count($this->getDoctrine()
+                ->getRepository(Candidate::class)
+                ->findAll());
+            $spontaneousCandidate = count($this->getDoctrine()
+                ->getRepository(SpontaneousCandidate::class)
+                ->findAll());
+        } catch (Exception $e) {
+            $posts = 0;
+            $offers = 0;
+            $candidate = 0;
+            $spontaneousCandidate = 0;
+        }
+
+        return $this->render('Back/index.twig', [
+            'posts' => $posts,
+            'offers' => $offers,
+            'candidate' => $candidate,
+            'spontaneousCandidate' => $spontaneousCandidate,
+        ]);
     }
 
     /**
