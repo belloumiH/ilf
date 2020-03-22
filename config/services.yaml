@@ -8,9 +8,12 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    # admin_account #
     amazon_key: 'AKIAX3BSBY3MCCHOOSEH'
     amazon_secret: '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'
-
+    # user_account #
+    #amazon_key: 'AKIAX3BSBY3MDR2MLAKO'
+    #amazon_secret: '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'
 services:
     # default configuration for services in *this* file
     _defaults:
@@ -38,10 +41,10 @@ services:
         public: true
         autowire: false
         arguments:
-            - "ilf-consulting" # Name of Bucket
+            - "acces-s3-client"
             -
                 credentials:
                     key:     "%amazon_key%"
                     secret:  "%amazon_secret%"
-                region:  "eu-west-3"    # Region of Bucket
-                version: "2006-03-01"      # API Version
+                region:  "eu-west-3"
+                version: "2006-03-01"

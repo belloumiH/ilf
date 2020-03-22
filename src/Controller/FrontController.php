@@ -35,7 +35,7 @@ class FrontController extends Controller
 
         $offers = $this->getDoctrine()
             ->getRepository(Offer::class)
-            ->findBy(['enabled' => 1]);
+            ->findBy(['enabled' => 1, 'ilfInd' => '1']);
 
         $projectRoot = $this->getParameter('kernel.project_dir');
         $translations = Yaml::parseFile($projectRoot.'/translations/translation_'.$languageUser.'.yaml');
@@ -104,7 +104,7 @@ class FrontController extends Controller
         if ($request->isMethod('post')) {
             $data = $request->request->all();
             $candidateFile = $request->files->get('candidate-file');
-            $fileName = '';
+            $fileNameAws = null;
             if (null !== $candidateFile) {
                 $fileName = microtime(true).'.'.$candidateFile->guessExtension();
                 try {
@@ -112,11 +112,13 @@ class FrontController extends Controller
                         $this->getParameter('uploads_private_directory'),
                         $fileName
                     );
-                    //$this->get('aws_storage')->uploadFile(
-                    //    $this->getParameter('uploads_private_directory').'/'.$fileName
-                    //);
+                    $fileNameAws = $this->get('aws_storage')->uploadFile(
+                        $this->getParameter('uploads_private_directory').'/'.$fileName,
+                        'recruilf/'
+                    );
+                    unlink($this->getParameter('uploads_private_directory').'/'.$fileName);
                 } catch (Exception $e) {
-                    $fileName = null;
+                    $fileNameAws = null;
                 }
             }
             $sCandidate = new SpontaneousCandidate();
@@ -125,7 +127,7 @@ class FrontController extends Controller
             $sCandidate->setPhone((string) $data['phone']);
             $sCandidate->setMail((string) $data['your-email']);
             $sCandidate->setComment((string) $data['comment']);
-            $sCandidate->setFile((string) $fileName);
+            $sCandidate->setFile((string) $fileNameAws);
             if ($data['post'] > 0) {
                 $post = $this->getDoctrine()
             ->getRepository(Post::class)
