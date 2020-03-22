@@ -19,4 +19,4 @@ framework:
         engines: ['twig']
 
     # Haythem Oussema code , overwride error controller
-#    error_controller: App\Controller\ErrorController::showAction
+    error_controller: App\Controller\ErrorController::showAction
