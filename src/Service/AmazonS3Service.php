@@ -32,12 +32,13 @@ class AmazonS3Service
      * @param string $fileName
      * @param string $content
      * @param string $privacy
+     * @param string $folder
      *
      * @return string file url
      */
-    public function upload($fileName, $content, array $meta = [], $privacy = 'public-read')
+    public function upload($fileName, $content, array $meta = [], $privacy = 'public-read', $folder = '')
     {
-        return $this->getClient()->upload($this->getBucket(), $fileName, $content, $privacy, [
+        return $this->getClient()->upload($this->getBucket(), $folder.$fileName, $content, $privacy, [
             'Metadata' => $meta,
         ])->toArray()['ObjectURL'];
     }
@@ -46,10 +47,11 @@ class AmazonS3Service
      * @param string      $fileName
      * @param string|null $newFilename
      * @param string      $privacy
+     * @param string      $folder
      *
      * @return string file url
      */
-    public function uploadFile($fileName, $newFilename = null, array $meta = [], $privacy = 'public-read')
+    public function uploadFile($fileName, $folder = '', $newFilename = null, array $meta = [], $privacy = 'public-read')
     {
         if (!$newFilename) {
             $newFilename = basename($fileName);
@@ -62,7 +64,7 @@ class AmazonS3Service
             finfo_close($mimeTypeHandler);
         }
 
-        return $this->upload($newFilename, file_get_contents($fileName), $meta, $privacy);
+        return $this->upload($newFilename, file_get_contents($fileName), $meta, $privacy, $folder);
     }
 
     /**

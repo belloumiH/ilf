@@ -56,7 +56,10 @@
                                         {{ candidate.lastName }}
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ path('back.download',{'fileName' : candidate.file })}}"><i class="fas fa-download"></i></a>
+                                        {% if candidate.file is defined and candidate.file != '' %}
+{#                                            <a class="btn btn-info" href="{{ path('back.download',{'fileName' : candidate.file })}}"><i class="fas fa-download"></i></a>#}
+                                            <a class="btn btn-info" href="{{ candidate.file }}"><i class="fas fa-download"></i></a>
+                                        {% endif %}
                                     </td>
                                     <td class="list-of-floating-elements" style="width: 25%;">
                                         <button type="button" class="btn btn-default" data-toggle="modal"

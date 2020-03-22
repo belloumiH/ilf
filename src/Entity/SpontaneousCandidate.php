@@ -6,6 +6,7 @@ namespace App\Entity;
 
 use App\Helper\Cryptor;
 use App\Traits\EntityIdTrait;
+use App\Traits\EntityTimestamp;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -19,6 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
 class SpontaneousCandidate
 {
     use EntityIdTrait;
+    use EntityTimestamp;
 
     /**
      * @var string|null
@@ -74,9 +76,15 @@ class SpontaneousCandidate
      */
     private $comment;
 
+    /**
+     * SpontaneousCandidate constructor.
+     *
+     * @throws \Exception
+     */
     public function __construct()
     {
         $this->skills = new ArrayCollection();
+        $this->setCreatedAt(new \DateTime('NOW'));
     }
 
     public function getFirstName(): ?string
