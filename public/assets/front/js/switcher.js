@@ -64,7 +64,7 @@ jQuery(document).ready(function(){
 		switcherHTML +=    		'<p>Boxed Patterns</p>';
 		switcherHTML +=    		'<ul id="switcher-patterns" class="list-inline">';
 
-		for (var i = 0; i < 12; i++) {
+		for (var i = 1; i < 12; i++) {
 			switcherHTML +=    		    '<li>';
 			switcherHTML +=    		        '<a href="#" class="pattern' + i + '" data-pattern="pattern' + i + '">';
 			switcherHTML +=    		            '<img src="/assets/front/img/patterns/pattern' + i + '.png" alt="" width="40" height="40" title="pattern' + i + '">';

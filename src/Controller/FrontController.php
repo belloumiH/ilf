@@ -185,14 +185,14 @@ class FrontController extends Controller
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function affaires(Request $request, string $languageUser)
+    public function services(Request $request, string $languageUser)
     {
-//        if ($request->isMethod('post')) {
-//            $data = $request->request->all();
-//            Mail::send();
-//            dump($data);
-//        }
-        return $this->render('Front/affaires.twig', ['languageUser' => $languageUser]);
+        if ($request->isMethod('post')) {
+            $data = $request->request->all();
+            Mail::send($data);
+        }
+
+        return $this->render('Front/services.twig', ['languageUser' => $languageUser]);
     }
 
     /**
@@ -201,5 +201,21 @@ class FrontController extends Controller
     public function partenaires(Request $request, string $languageUser)
     {
         return $this->render('Front/partenaires.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function quiSommeNous(Request $request, string $languageUser)
+    {
+        return $this->render('Front/quiSommeNous.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function tupr(Request $request, string $languageUser)
+    {
+        return $this->render('Front/tupr.twig', ['languageUser' => $languageUser]);
     }
 }
