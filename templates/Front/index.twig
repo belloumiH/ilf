@@ -198,8 +198,14 @@
                                         <h3>
                                             {{ offer.title }}
                                         </h3>
+                                        <h6>
+                                            Compétence :
+                                            {% for skill_offer in offer.skills %}
+                                                {{ skill_offer.label }}{{ loop.last != true ?',':'' }}
+                                            {% endfor %}
+                                        </h6>
                                         <p>
-                                            {{ offer.description }}
+                                            {{ offer.description|slice(0, 50) }} ...
                                         </p>
                                     </div>
                                     </a>
@@ -430,158 +436,6 @@
                             </article>
                             <!-- #post-## -->
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="icon-boxed teaser-box ls s-py-lg-130 c-my-lg-10 s-parallax">
-            <div class="container">
-                <div class="row">
-                    {% for offer in offers %}
-                        <div class="col-lg-4">
-                            <a href="{{ path('front.postulate',{'offerId' : offer.id, 'languageUser' : languageUser }) }}">
-                                <div class="icon-box text-center hero-bg box-shadow">
-                                    <div class="teaser-icon icon-styled bg-maincolor3">
-                                        {% if offer.img is defined and offer.img != null and offer.img != ''%}
-                                        <img alt="" src="{{ asset('uploads/'~offer.img) }}" style="width: 50px;height: 50px;margin-top: 10px;">
-                                    {% endif %}
-                                </div>
-                                <h3>
-                                    {{ offer.title }}
-                                </h3>
-                                <p>
-                                    {{ offer.description }}
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                {% endfor %}
-                {#                        <div class="col-lg-4">#}
-                {#                            <div class="icon-box text-center hero-bg box-shadow">#}
-                {#                                <div class="teaser-icon icon-styled bg-maincolor3">#}
-                {#                                    <i class="fa fa-unlock-alt"></i>#}
-                {#                                </div>#}
-                {#                                <h3>#}
-                {#                                    <a href="#">Candidat</a>#}
-                {#                                </h3>#}
-                {#                                <p>#}
-                {#                                    Cloud-based services can offer our customers single tenant dedicated environments#}
-                {#                                </p>#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                        <div class="col-lg-4">#}
-                {#                            <div class="icon-box text-center hero-bg box-shadow">#}
-                {#                                <div class="teaser-icon icon-styled bg-maincolor3">#}
-                {#                                    <i class="fa fa-cloud"></i>#}
-                {#                                </div>#}
-                {#                                <h3>#}
-                {#                                    <a href="#">Recruteur</a>#}
-                {#                                </h3>#}
-                {#                                <p>#}
-                {#                                    Working with customers making 100-40,000 hires per annum#}
-                {#                                </p>#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                        <div class="col-lg-4">#}
-                {#                            <div class="icon-box text-center hero-bg box-shadow">#}
-                {#                                <div class="teaser-icon icon-styled bg-maincolor3">#}
-                {#                                    <i class="fa fa-database"></i>#}
-                {#                                </div>#}
-                {#                                <h3>#}
-                {#                                    <a href="#">Service</a>#}
-                {#                                </h3>#}
-                {#                                <p>#}
-                {#                                    All of our customers' data is validated. We build accurate data banks for reporting#}
-                {#                                </p>#}
-                {#                            </div>#}
-                {#                        </div>#}
-                {#                    </div>#}
-            </div>
-        </section>
-
-        <section class="s-py-lg-150 main_contact_form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 contact-header heading text-center">
-                        <h5>
-                            CANDIDATURE
-                        </h5>
-                        <h4>
-                           SPONTANÉE
-                       </h4>
-                   </div>
-                   <div class="px-30 ds-form">
-                    <form class="ds contact-form c-mb-20"  enctype="multipart/form-data" method="post"
-                    action="{{ path('front.insert.spontanious', {'languageUser' : languageUser}) }}" >
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="col-c-mb-60 form-group has-placeholder"  >
-                                <label for="name">Nom
-                                    <span class="required">*</span>
-                                </label>
-                                <input type="text" aria-required="true" size="200" value="" name="first-name" id="first-name" class="form-control" placeholder="Nom">
-                            </div>
-                            <div class="col-c-mb-60 form-group has-placeholder">
-                                <label for="text">Prénom
-                                    <span class="required">*</span>
-                                </label>
-                                <input type="text" aria-required="true" size="200" value="" name="last-name" id="last-name" class="form-control" placeholder="Prénom">
-                            </div>
-                            <div class="col-c-mb-60 form-group has-placeholder">
-                                <label for="text">Téléphone
-                                    <span class="required">*</span>
-                                </label>
-                                <input type="text" aria-required="true" size="200" value="" name="phone" id="text" class="form-control" placeholder="Téléphone">
-                            </div>
-                            <div class="col-c-mb-60 form-group has-placeholder">
-                                <label for="email">Email
-                                    <span class="required">*</span>
-                                </label>
-                                <input type="email" aria-required="true" size="200" value="" name="your-email" id="email" class="form-control" placeholder="Email ">
-                            </div>
-                            <!--<div class="col-c-mb-60 form-group has-placeholder">
-                                <label for="select">Poste Actuel </label>
-                                <select class="country_to_state country_select form-control select2-hidden-accessible check"
-                                name="post"
-                                placeholder="Offre">
-                                <option  class="form-control" value="0"> Offres </option>
-                                {% for post in posts %}
-                                    <option  class="form-control" value="{{ post.id }}">{{ post.label }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>-->
-                                       <!--  <div class="col-c-mb-60 form-group has-placeholder">
-                                            <label for="select">Skills </label>
-                                            <select class="form-control"
-                                                    id="selectSkill"
-                                                    name="skillSpontanious[]"
-                                                    placeholder="Skill" multiple="multiple">
-                                                <option  class="form-control" value="0"> -- </option>
-                                                {% for skill in skills %}
-                                                <option  class="form-control" value="{{ skill.id }}">{{ skill.label }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div> -->
-                                    <div class="col-c-mb-60 form-group">
-                                        <input type="file" class="custom-file-input button"
-                                        id="validatedCustomFilePostulate" accept=".pdf, .doc, .docx" name="candidate-file">
-                                        <label class="custom-file-label" id="validatedCustomFilePostulateLabel" for="validatedCustomFilePostulate">Joindre CV</label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group has-placeholder">
-                                        <label for="message">Lettre de motivation</label>
-                                        <textarea aria-required="true" rows="6" cols="40" name="comment" id="message" class="form-control" placeholder="Lettre de motivation"></textarea>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group text-center">
-                                    <button type="submit" id="contact_form_submit" name="contact_submit" class="button">Envoyer</button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
