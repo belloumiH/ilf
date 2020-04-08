@@ -760,7 +760,7 @@ button:not([class]):hover {
 
 textarea.form-control {
     color: #808080;
-    height: 330px;
+    height: 260px;
     padding-top: 20px;
 }
 
@@ -16063,6 +16063,10 @@ body.active-side-header.slide-right .page_header_side {
 
     .page_title.s-parallax.nous {
         background-image: url("../images/gallery/gallery-13.jpg");
+    }
+
+    .page_title.s-parallax.uni {
+        background-image: url("../images/gallery/gallery-09.jpg");
     }
 
     .page_title.s-parallax.ilfo {
