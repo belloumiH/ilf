@@ -38,7 +38,44 @@ front.tous.uni:
   path: /tupr
   controller: App\Controller\FrontController::tupr
   defaults:
-    languageUser : 'fr'               
+    languageUser : 'fr'    
+
+front.filiale:
+  path: /nos-filiale
+  controller: App\Controller\FrontController::filiale
+  defaults:
+    languageUser : 'fr' 
+
+front.eau.pour.tous:
+  path: /leau-pour-tous
+  controller: App\Controller\FrontController::eauPourTous
+  defaults:
+    languageUser : 'fr'
+
+front.humanitaires:
+  path: /humanitaire
+  controller: App\Controller\FrontController::humanitaires
+  defaults:
+    languageUser : 'fr'
+
+front.formation.pour.tous:
+  path: /formation-pour-tous
+  controller: App\Controller\FrontController::formationPourTous
+  defaults:
+    languageUser : 'fr'
+
+front.lif:
+  path: /lif
+  controller: App\Controller\FrontController::lif
+  defaults:
+    languageUser : 'fr'
+
+front.talentlif:
+  path: /talentlif
+  controller: App\Controller\FrontController::talentlif
+  defaults:
+    languageUser : 'fr'                    
+
 
 front.insert.spontanious:
   path: /insert-spontanious
