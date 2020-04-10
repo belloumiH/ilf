@@ -7,8 +7,8 @@
 
 $(".update-post-class").on("click", function (event) {
     var idPost = $(this).attr('data-input-id');
-    var idLabelPost = $(this).attr('data-input-label');
-    var labelPostValue = $('#' + idLabelPost).val();
+    var labelPostValue = $('#input_label_' + idPost).val();
+    var labelPostValueEn = $('#input_label_en_' + idPost).val();
 
     $.ajax({
         url: Routing.generate('update.post', {
@@ -18,6 +18,7 @@ $(".update-post-class").on("click", function (event) {
         async: true,
         data: {
             "value": labelPostValue,
+            "valueEn": labelPostValueEn,
         },
         success: function (data) {
             window.location.href = Routing.generate('show.post');
@@ -30,8 +31,8 @@ $(".update-post-class").on("click", function (event) {
 
 $(".update-skill-class").on("click", function (event) {
     var idSkill = $(this).attr('data-input-id');
-    var idLabelSkill = $(this).attr('data-input-label');
-    var labelSkillValue = $('#' + idLabelSkill).val();
+    var labelSkillValue = $('#input_label_' + idSkill).val();
+    var labelSkillValueEn = $('#input_label_en_' + idSkill).val();
 
     $.ajax({
         url: Routing.generate('update.skill', {
@@ -41,6 +42,7 @@ $(".update-skill-class").on("click", function (event) {
         async: true,
         data: {
             "value": labelSkillValue,
+            "valueEn": labelSkillValueEn,
         },
         success: function (data) {
             window.location.href = Routing.generate('show.skill');

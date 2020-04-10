@@ -26,6 +26,13 @@ class Post
      */
     private $label;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="label_en", type="string", length=255, nullable=true , options={"default" : " "}))
+     */
+    private $labelEn = '';
+
     public function getLabel(): ?string
     {
         return $this->label;
@@ -34,6 +41,18 @@ class Post
     public function setLabel(?string $label): Post
     {
         $this->label = $label;
+
+        return $this;
+    }
+
+    public function getLabelEn(): ?string
+    {
+        return $this->labelEn;
+    }
+
+    public function setLabelEn(?string $labelEn): Post
+    {
+        $this->labelEn = $labelEn;
 
         return $this;
     }

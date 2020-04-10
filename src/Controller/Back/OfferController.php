@@ -64,12 +64,16 @@ class OfferController extends AbstractController
                 ->find($skill);
             $offerSkill = new OfferSkill();
             $offerSkill->setLabel($skillRepo->getLabel());
+            $offerSkill->setLabelEn($skillRepo->getLabelEn());
             $offerSkill->setSkillId((int) $skillRepo->getId());
             $offer->addSkills($offerSkill);
         }
         $offer->setTitle((string) $data['titleOffer']);
         $offer->setDescription((string) $data['descriptionOffer']);
         $offer->setAddress((string) $data['addressOffer']);
+        $offer->setTitleEn((string) $data['titleOfferEn']);
+        $offer->setDescriptionEn((string) $data['descriptionOfferEn']);
+        $offer->setAddressEn((string) $data['addressOfferEn']);
         if (true === isset($data['checkIlfOffer']) and 'on' === (string) $data['checkIlfOffer']) {
             $offer->setIlfInd(true);
         }
@@ -149,12 +153,16 @@ class OfferController extends AbstractController
                 ->find($skill);
             $offerSkill = new OfferSkill();
             $offerSkill->setLabel($skillRepo->getLabel());
+            $offerSkill->setLabelEn($skillRepo->getLabelEn());
             $offerSkill->setSkillId((int) $skillRepo->getId());
             $offer->addSkills($offerSkill);
         }
         $offer->setTitle((string) $data['titleOffer']);
         $offer->setDescription((string) $data['descriptionOffer']);
         $offer->setAddress((string) $data['addressOffer']);
+        $offer->setTitleEn((string) $data['titleOfferEn']);
+        $offer->setDescriptionEn((string) $data['descriptionOfferEn']);
+        $offer->setAddressEn((string) $data['addressOfferEn']);
         $offer->setIlfInd(false);
         if (true === isset($data['checkIlfOffer']) and 'on' === (string) $data['checkIlfOffer']) {
             $offer->setIlfInd(true);

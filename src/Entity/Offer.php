@@ -70,6 +70,27 @@ class Offer
      */
     private $post;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="title_en", type="string", length=255, nullable=true, options={"default" : " "}))
+     */
+    private $titleEn;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="description_en", type="text", nullable=true, options={"default" : " "}))
+     */
+    private $descriptionEn;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="address_en", type="string", length=255, nullable=true, options={"default" : " "}))
+     */
+    private $addressEn;
+
     public function __construct()
     {
         $this->skills = new ArrayCollection();
@@ -200,5 +221,67 @@ class Offer
         $this->post = $post;
 
         return $this;
+    }
+
+    public function getTitleEn(): ?string
+    {
+        return $this->titleEn;
+    }
+
+    public function setTitleEn(?string $titleEn): Offer
+    {
+        $this->titleEn = $titleEn;
+
+        return $this;
+    }
+
+    public function getDescriptionEn(): ?string
+    {
+        return $this->descriptionEn;
+    }
+
+    public function setDescriptionEn(?string $descriptionEn): Offer
+    {
+        $this->descriptionEn = $descriptionEn;
+
+        return $this;
+    }
+
+    public function getAddressEn(): ?string
+    {
+        return $this->addressEn;
+    }
+
+    public function setAddressEn(?string $addressEn): Offer
+    {
+        $this->addressEn = $addressEn;
+
+        return $this;
+    }
+
+    public function jsonSerialize()
+    {
+        $skillsJson = [];
+        $skillsJsonFr = [];
+        $skillsJsonEn = [];
+        $skills = $this->getSkills();
+        foreach ($skills as $skill) {
+            $skillsJsonFr[] = $skill->getLabel();
+            $skillsJsonEn[] = $skill->getLabelEn();
+        }
+        $skillsJson['fr'] = $skillsJsonFr;
+        $skillsJson['en'] = $skillsJsonEn;
+        $result = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'address' => $this->address,
+            'titleEn' => $this->titleEn,
+            'descriptionEn' => $this->descriptionEn,
+            'addressEn' => $this->addressEn,
+            'skills' => $skillsJson,
+        ];
+
+        return $result;
     }
 }

@@ -36,6 +36,13 @@ class OfferSkill
      */
     private $label;
 
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="label_en", type="string", length=255, nullable=true, options={"default" : " "}))
+     */
+    private $labelEn = '';
+
     public function getLabel(): ?string
     {
         return $this->label;
@@ -71,6 +78,18 @@ class OfferSkill
     public function setSkillId(?int $skillId): OfferSkill
     {
         $this->skillId = $skillId;
+
+        return $this;
+    }
+
+    public function getLabelEn(): ?string
+    {
+        return $this->labelEn;
+    }
+
+    public function setLabelEn(?string $labelEn): OfferSkill
+    {
+        $this->labelEn = $labelEn;
 
         return $this;
     }
