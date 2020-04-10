@@ -391,13 +391,13 @@
                             <!-- #post-## -->
                             <article class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
                                 <div class="item-media post-thumbnail">
-                                    <a href="#">
+                                    <a href="{{ path('front.humanitaires',{'languageUser' : languageUser }) }}">
                                         <img src="{{ asset('assets/front/images/humanitaire-index.jpg') }}" alt="">
                                     </a>
                                 </div>
                                 <div class="item-content">
                                     <header class="blog-header ">
-                                        <a href="#" rel="bookmark">
+                                        <a href="{{ path('front.humanitaires',{'languageUser' : languageUser }) }}" rel="bookmark">
                                             <h4>
                                                 Humanitaire
                                             </h4>
@@ -414,14 +414,14 @@
                             <!-- #post-## -->
                             <article class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
                                 <div class="item-media post-thumbnail">
-                                    <a href="#">
+                                    <a href="{{ path('front.formation.pour.tous',{'languageUser' : languageUser }) }}">
                                         <img src="{{ asset('assets/front/images/formation-index.jpg') }}" alt="">
                                     </a>
                                 </div>
                                 <!-- .post-thumbnail -->
                                 <div class="item-content">
                                     <header class="blog-header ">
-                                        <a href="#" rel="bookmark">
+                                        <a href="{{ path('front.formation.pour.tous',{'languageUser' : languageUser }) }}" rel="bookmark">
                                             <h4>
                                                 La formation pour tous
                                             </h4>

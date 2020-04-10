@@ -218,4 +218,52 @@ class FrontController extends Controller
     {
         return $this->render('Front/tupr.twig', ['languageUser' => $languageUser]);
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function filiale(Request $request, string $languageUser)
+    {
+        return $this->render('Front/filiale.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function humanitaires(Request $request, string $languageUser)
+    {
+        return $this->render('Front/humanitaires.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function formationPourTous(Request $request, string $languageUser)
+    {
+        return $this->render('Front/formationPourTous.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function lif(Request $request, string $languageUser)
+    {
+        return $this->render('Front/lif.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function eauPourTous(Request $request, string $languageUser)
+    {
+        return $this->render('Front/eauPourTous.twig', ['languageUser' => $languageUser]);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function talentlif(Request $request, string $languageUser)
+    {
+        return $this->render('Front/talentlif.twig', ['languageUser' => $languageUser]);
+    }
 }
