@@ -60,6 +60,21 @@
                                                   placeholder="Address ...">{{ offer.address }}</textarea>
                                     </div>
                                     <div class="form-group">
+                                        <label for="titleOfferEn">Title En</label>
+                                        <input type="text" id="titleOfferEn" name="titleOfferEn" class="form-control"
+                                               value="{{ offer.titleEn }}">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description En</label>
+                                        <textarea class="form-control" name="descriptionOfferEn"
+                                                  placeholder="Your description ...">{{ offer.descriptionEn }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address En</label>
+                                        <textarea class="form-control" name="addressOfferEn"
+                                                  placeholder="Address ...">{{ offer.addressEn }}</textarea>
+                                    </div>
+                                    <div class="form-group">
                                         <label>Skill</label>
                                         <select class="select2" id="skillOffer" multiple="multiple" name="skillOffer[]"
                                                 data-placeholder="Select skill"

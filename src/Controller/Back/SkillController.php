@@ -36,13 +36,13 @@ class SkillController extends AbstractController
         if ($request->isMethod('post')) {
             // Get one post data
             $skillLabel = (string) $request->get('skillLabel');
+            $skillLabelEn = (string) $request->get('skillLabelEn');
             // Get all post data
             // $data = $request->request->all();
-            if (true === isset($skillLabel) && '' != $skillLabel) {
-                $skill = new Skill();
-                $skill->setLabel($skillLabel);
-                $skill = $this->insert($skill);
-            }
+            $skill = new Skill();
+            $skill->setLabel($skillLabel);
+            $skill->setLabelEn($skillLabelEn);
+            $skill = $this->insert($skill);
         }
 
         return $this->redirectToRoute('show.skill');
@@ -57,6 +57,7 @@ class SkillController extends AbstractController
             ->getRepository(Skill::class)
             ->find($idSkill);
         $skill->setLabel($request->get('value'));
+        $skill->setLabelEn($request->get('valueEn'));
         $skill = $this->update($skill);
 
         return new Response(

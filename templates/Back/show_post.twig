@@ -43,6 +43,10 @@
                                         <input type="text" id="postLabel" name="postLabel" class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        <label for="postLabelEn">post label En</label>
+                                        <input type="text" id="postLabelEn" name="postLabelEn" class="form-control">
+                                    </div>
+                                    <div class="form-group">
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -72,6 +76,7 @@
                             <tr>
                                 <th>Post ID</th>
                                 <th>label</th>
+                                <th>label En</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -84,6 +89,9 @@
                                     </td>
                                     <td>
                                         {{ post.label }}
+                                    </td>
+                                    <td>
+                                        {{ post.labelEn }}
                                     </td>
                                     <td>
                                         {{ post.isEnabled() ?'enable':'disable' }}
@@ -110,9 +118,15 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <input type="text" name="post-label"
+                                                        <h4 class="modal-title">post label</h4>
+                                                        <input type="text"
                                                                id="input_label_{{ post.id }}"
                                                                value="{{ post.label }}">
+                                                        <br>
+                                                        <h4 class="modal-title">post label En</h4>
+                                                        <input type="text"
+                                                               id="input_label_en_{{ post.id }}"
+                                                               value="{{ post.labelEn }}">
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default"
@@ -120,6 +134,7 @@
                                                         </button>
                                                         <input type="submit"
                                                                class="btn btn-primary update-post-class"
+                                                               data-input-id="{{ post.id }}"
                                                                value="Save changes">
                                                     </div>
                                                 </div>

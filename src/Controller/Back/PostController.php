@@ -36,13 +36,13 @@ class PostController extends AbstractController
         if ($request->isMethod('post')) {
             // Get one post data
             $postLabel = (string) $request->get('postLabel');
+            $postLabelEn = (string) $request->get('postLabelEn');
             // Get all post data
             // $data = $request->request->all();
-            if (true === isset($postLabel) && '' != $postLabel) {
-                $post = new Post();
-                $post->setLabel($postLabel);
-                $post = $this->insert($post);
-            }
+            $post = new Post();
+            $post->setLabel($postLabel);
+            $post->setLabelEn($postLabelEn);
+            $post = $this->insert($post);
         }
 
         return $this->redirectToRoute('show.post');
@@ -54,6 +54,7 @@ class PostController extends AbstractController
             ->getRepository(Post::class)
             ->find($idPost);
         $post->setLabel($request->get('value'));
+        $post->setLabelEn($request->get('valueEn'));
         $post = $this->update($post);
 
         return new Response(

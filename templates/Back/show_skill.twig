@@ -43,6 +43,10 @@
                                         <input type="text" id="skillLabel" name="skillLabel" class="form-control">
                                     </div>
                                     <div class="form-group">
+                                        <label for="skillLabelEn">skill label En</label>
+                                        <input type="text" id="skillLabelEn" name="skillLabelEn" class="form-control">
+                                    </div>
+                                    <div class="form-group">
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -72,6 +76,7 @@
                             <tr>
                                 <th>Skill ID</th>
                                 <th>label</th>
+                                <th>label En</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -84,6 +89,9 @@
                                     </td>
                                     <td>
                                         {{ skill.label }}
+                                    </td>
+                                    <td>
+                                        {{ skill.labelEn }}
                                     </td>
                                     <td>
                                         {{ skill.isEnabled() ?'enable':'disable' }}
@@ -110,9 +118,15 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <input type="text" name="skill-label"
+                                                        <h4 class="modal-title">skill label</h4>
+                                                        <input type="text"
                                                                id="input_label_{{ skill.id }}"
                                                                value="{{ skill.label }}">
+                                                        <br>
+                                                        <h4 class="modal-title">skill label En</h4>
+                                                        <input type="text"
+                                                               id="input_label_en_{{ skill.id }}"
+                                                               value="{{ skill.labelEn }}">
                                                     </div>
                                                     <div class="modal-footer justify-content-between">
                                                         <button type="button" class="btn btn-default"
@@ -120,6 +134,7 @@
                                                         </button>
                                                         <input type="submit"
                                                                class="btn btn-primary update-skill-class"
+                                                               data-input-id="{{ skill.id }}"
                                                                value="Save changes">
                                                     </div>
                                                 </div>
