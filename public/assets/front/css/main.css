@@ -13218,8 +13218,8 @@ a img.aligncenter {
 	.nav-narrow .sf-menu > li > a {
 		margin-left: 29px;
 		margin-right: 29px;
-		padding-bottom: 34px;
-		padding-top: 34px;
+		padding-bottom: 20px;
+		padding-top: 14px;
 	}
 
 	.nav-narrow .sf-menu > li.active > a:before {
