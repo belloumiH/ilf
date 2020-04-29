@@ -16051,7 +16051,7 @@ a:hover {
 }
 
 .page_title.s-parallax.nous {
-	background-image: url("../images/gallery/gallery-13.jpg");
+	background-image: url("../img/legroupe0.jpg");
 }
 
 .page_title.s-parallax.ilfo {
@@ -17722,4 +17722,11 @@ select.country_to_state.country_select.form-control.select2-hidden-accessible.ch
 .no-padding {
 	padding-bottom: 0 !important;
 	padding-top: 0 !important;
+}
+
+.style-img-group{
+	border-color: blue;
+	border-block-width: 3px;
+	border-style: solid;
+	padding: 25px 0 25px 0 !important;
 }

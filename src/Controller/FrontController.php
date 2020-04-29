@@ -272,4 +272,12 @@ class FrontController extends Controller
     {
         return $this->render('Front/talentlif.twig', ['languageUser' => $languageUser]);
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function group(Request $request, string $languageUser)
+    {
+        return $this->render('Front/group.twig', ['languageUser' => $languageUser]);
+    }
 }

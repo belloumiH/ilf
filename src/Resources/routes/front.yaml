@@ -26,25 +26,13 @@ front.partenaires:
   path: /partenaires
   controller: App\Controller\FrontController::partenaires
   defaults:
-    languageUser : 'fr'  
-
-front.qui.somme.nous:
-  path: /qui-somme-nous
-  controller: App\Controller\FrontController::quiSommeNous
-  defaults:
-    languageUser : 'fr'  
+    languageUser : 'fr'   
 
 front.tous.uni:
   path: /tupr
   controller: App\Controller\FrontController::tupr
   defaults:
-    languageUser : 'fr'    
-
-front.filiale:
-  path: /nos-filiale
-  controller: App\Controller\FrontController::filiale
-  defaults:
-    languageUser : 'fr' 
+    languageUser : 'fr'
 
 front.eau.pour.tous:
   path: /leau-pour-tous
@@ -74,9 +62,14 @@ front.talentlif:
   path: /talentlif
   controller: App\Controller\FrontController::talentlif
   defaults:
-    languageUser : 'fr'                    
-
+    languageUser : 'fr'
 
 front.insert.spontanious:
   path: /insert-spontanious
   controller: App\Controller\FrontController::insertCandidateSpontanious
+
+front.group:
+  path: /groupe
+  controller: App\Controller\FrontController::group
+  defaults:
+    languageUser : 'fr'
