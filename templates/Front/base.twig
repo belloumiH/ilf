@@ -124,10 +124,13 @@
                                     <!-- main nav start -->
                                     <nav class="top-nav">
                                         <ul class="nav sf-menu">
+                                            <li>
+                                                <a href="{{ path('front.index',{'languageUser' : languageUser }) }}">Accueil</a>
+                                            </li>    
 
 
                                             <li>
-                                                <a href="{{ path('front.index',{'languageUser' : languageUser }) }}">Le Groupe</a>
+                                                <a href="">Le Groupe</a>
                                                 <ul>
                                                     <li><a href="{{ path('front.qui.somme.nous',{'languageUser' : languageUser }) }}">Qui somme-nous?</a></li>
                                                     <li><a href="{{ path('front.filiale',{'languageUser' : languageUser }) }}">Nos filiales</a> </li>
@@ -148,12 +151,7 @@
                                             <li>   
                                                 <!-- contacts -->
                                                 <a href="{{ path('front.contact') }}">Contact</a>
-                                            </li>
-                                            <li>
-                                                <span class="social-icons top">
-                                                    <a href="https://www.linkedin.com/company/ilfconsulting-fr" target="_blank" class="fa fa-linkedin " title="linkedin"></a>
-                                                </span>
-                                            </li>
+                                            </li>                                        
                                             <!-- eof contacts -->
 
 
@@ -206,16 +204,16 @@
                                     </div>
                                 </div>
                                 <div class="footer  col-md-4 animate" data-animation="fadeInUp" >
-                                    <div class="author-social" style="margin-top:320px;    margin-left: 25%;">
+                                    <div class="author-social" style="margin-top:120px;    margin-left: 25%;">
                                         <a href="#" class="fa fa-facebook color-bg-icon rounded-icon"></a>
                                         <a href="#" class="fa fa-twitter color-bg-icon rounded-icon"></a>
-                                        <a href="#" class="fa fa-google color-bg-icon rounded-icon"></a>
+                                        <a href="https://www.linkedin.com/company/ilfconsulting-fr" class="fa fa-linkedin color-bg-icon rounded-icon"></a>
                                     </div>
 
                                 </div>
                                 <div class="footer col-md-4  animate" data-animation="fadeInUp">
                                     <div class="text-center">
-                                        <div class="header_logo_center footer-logo-ds" style="margin-top:100px;">
+                                        <div class="header_logo_center footer-logo-ds">
                                             <a href="#" class="logo">
                                                 <img src="{{ asset('assets/front/images/logoup.png') }}" alt=""><br>
                                             </a>
@@ -241,7 +239,7 @@
                                         </div>
                                         <div class="media">
 <!--                                 <div class="pull-left" style="margin-left:20;">
--->                                <a href="https://www.linkedin.com/company/ilfconsulting-fr" target="_blank" class="fa ilf fa-linkedin " title="linkedin"></a>
+-->                                
 <!--                             </div>
 -->                            </div>
 </div>

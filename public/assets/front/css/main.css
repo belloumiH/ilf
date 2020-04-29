@@ -759,7 +759,7 @@ button:not([class]):hover {
 
 textarea.form-control {
 	color: #808080;
-	height: 330px;
+	height: 260px;
 	padding-top: 20px;
 }
 
@@ -10144,8 +10144,9 @@ widget_recent_entries
 	display: inline-block;
 	flex-grow: 10;
 	-ms-flex-positive: 10;
-	padding-bottom: 12px;
-	padding-top: 12px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	color: #808080 !important;
 }
 
 .widget_archive li > a:before,
