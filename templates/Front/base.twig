@@ -124,10 +124,13 @@
                                     <!-- main nav start -->
                                     <nav class="top-nav">
                                         <ul class="nav sf-menu">
+                                            <li>
+                                                <a href="{{ path('front.index',{'languageUser' : languageUser }) }}">Accueil</a>
+                                            </li>    
 
 
                                             <li>
-                                                <a href="{{ path('front.index',{'languageUser' : languageUser }) }}">Le Groupe</a>
+                                                <a href="">Le Groupe</a>
                                                 <ul>
                                                     <li><a href="{{ path('front.qui.somme.nous',{'languageUser' : languageUser }) }}">Qui somme-nous?</a></li>
                                                     <li><a href="{{ path('front.filiale',{'languageUser' : languageUser }) }}">Nos filiales</a> </li>
@@ -148,12 +151,7 @@
                                             <li>   
                                                 <!-- contacts -->
                                                 <a href="{{ path('front.contact') }}">Contact</a>
-                                            </li>
-                                            <li>
-                                                <span class="social-icons top">
-                                                    <a href="https://www.linkedin.com/company/ilfconsulting-fr" target="_blank" class="fa fa-linkedin " title="linkedin"></a>
-                                                </span>
-                                            </li>
+                                            </li>                                        
                                             <!-- eof contacts -->
 
 
@@ -182,26 +180,35 @@
                     <footer class="page_footer ds s-py-sm-20 s-pt-md-75 s-pb-md-50 s-py-lg-130 c-gutter-60 pb-20 half-section">
                         <div class="container no-padding">
                             <div class="row">
-                                <div class="footer col-md-4 text-center animate" data-animation="fadeInUp">
-                                    <div class="footer widget text-center">
-                                        <h3 class="widget-title title-menu" style="color:#ff9a57;">Explore</h3>
-                                        <ul class="footer-menu">
-                                            <li>
-                                                <a href="https://www.talentlif.com/">Talent LIF</a>
+                                <div class="col-md-4 animate animated fadeInUp" data-animation="fadeInUp">
+                                    <div class="widget widget_categories">
+                                        <h3 class="widget-title">Accés Rapide</h3>
+                                        <ul>
+                                            <li class="cat-item">
+                                                <a href="blog-right.html">Le groupe</a>
                                             </li>
-                                            <li class="menu1">
-                                                <a>Nos Filiales</a>
+                                            <li class="cat-item">
+                                                <a href="blog-right.html">Nos Services</a>
                                             </li>
-                                            <li class="border-bottom-0">
-                                                <a href="#">Contact</a>
+                                            <li class="cat-item">
+                                                <a href="blog-right.html">Talent LIF</a>
                                             </li>
-                                            <li class="menu1 border-bottom-0">
-                                                <a>About</a>
+                                            <li class="cat-item">
+                                                <a href="blog-right.html">Nos partenariats</a>
+                                            </li>
+                                            <li class="cat-item">
+                                                <a href="blog-right.html">Contact</a>
+
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="footer  col-md-4 text-center animate" data-animation="fadeInUp">
+                                <div class="footer  col-md-4 animate" data-animation="fadeInUp" >
+                                    <div class="author-social" style="margin-top:120px;    margin-left: 25%;">
+                                        <a href="#" class="fa fa-facebook color-bg-icon rounded-icon"></a>
+                                        <a href="#" class="fa fa-twitter color-bg-icon rounded-icon"></a>
+                                        <a href="https://www.linkedin.com/company/ilfconsulting-fr" class="fa fa-linkedin color-bg-icon rounded-icon"></a>
+                                    </div>
 
                                 </div>
                                 <div class="footer col-md-4  animate" data-animation="fadeInUp">
@@ -232,15 +239,15 @@
                                         </div>
                                         <div class="media">
 <!--                                 <div class="pull-left" style="margin-left:20;">
--->                                <a href="https://www.linkedin.com/company/ilfconsulting-fr" target="_blank" class="fa ilf fa-linkedin " title="linkedin"></a>
+-->                                
 <!--                             </div>
 -->                            </div>
 </div>
 
 </div>
 <div class="author-social">
-   {#<a href="#" class="fa fa-twitter color-bg-icon rounded-icon"></a>#}
-   {#<a href="#" class="fa fa-google color-bg-icon rounded-icon"></a>#}
+ {#<a href="#" class="fa fa-twitter color-bg-icon rounded-icon"></a>#}
+ {#<a href="#" class="fa fa-google color-bg-icon rounded-icon"></a>#}
 </div>
 </div>
 </div>

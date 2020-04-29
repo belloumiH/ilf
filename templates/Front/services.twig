@@ -1,6 +1,6 @@
 {% extends 'Front/base.twig' %}
 {% block content %}
-  <section class="page_title cs s-parallax s-overlay gradientradial-background s-py-50" style="background-position: 50% 1px;">
+  <section class="page_title cs s-parallax  gradientradial-background s-py-50" style="background-position: 50% 1px;">
     <div class="container">
       <div class="row">
 
@@ -196,8 +196,7 @@
        <div class="col-lg-3 col-md-4">
         <div class="service_item">
          <h4><img class=" size-full "  style="display: block;
-          margin: 2
-          10px auto 30px auto;" src="{{ asset('assets/front/images/google-finale.png') }}"  height="100" width="130"></h4>
+          margin: 10px auto 30px auto;" src="{{ asset('assets/front/images/google-finale.png') }}"  height="100" width="130"></h4>
           <p></p>
         </div>
       </div>
@@ -425,10 +424,7 @@
               <div class="fusion-fullwidth fullwidth-box fusion-builder-row-8 hundred-percent-fullwidth non-hundred-percent-height-scrolling"
               style='background-color: rgba(255,255,255,0);background-position: left top;background-repeat: no-repeat;padding-top:0px;padding-right:50px;padding-bottom:0px;padding-left:50px;border-top-width:0px;border-bottom-width:0px;border-color:#eae9e9;border-top-style:solid;border-bottom-style:solid;'>
               <div class="fusion-builder-row row ">
-                <div data-animationType=slideInLeft data-animationDuration=1.0
-                data-animationOffset=100%
-                class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-16 fusion-one-half fusion-column-first borderrt fusion-animated 1_2"
-                style='margin-top:0px;margin-bottom:20px;width:48%; margin-right: 4%;'>
+                <div class="col-sm">
                 <div class="fusion-column-wrapper"
                 style="padding: 20px 0px 20px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;"
                 data-bg-url="">
@@ -449,10 +445,7 @@
 
               </div>
             </div>
-            <div data-animationType=slideInRight data-animationDuration=1.0
-            data-animationOffset=100%
-            class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-17 fusion-one-half fusion-column-last fusion-animated 1_2"
-            style='margin-top:0px;margin-bottom:20px;width:48%'>
+            <div class="col-sm">
             <div class="fusion-column-wrapper"
             style="padding: 20px 0px 20px 0px;background-position:left top;background-repeat:no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;"
             data-bg-url="">
@@ -485,7 +478,7 @@
                 <div id="left">
                   <p>Nom : <span style="color:red;">*</span><br/>
                     <span class="wpcf7-form-control-wrap your-name"><input
-                      type="text" name="your-name"
+                      type="text" name="name"
                       value=""
                       size="40"
                       class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
@@ -535,24 +528,24 @@
                               class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required"><span
                               class="wpcf7-list-item first"><label><input
                               type="checkbox"
-                              name="your-services[]"
+                              name="serviceCloud"
                               value="Liaisons SIP"/><span
                               class="wpcf7-list-item-label">Services Cloud</span></label></span><br><span
                               class="wpcf7-list-item"><label><input
                               type="checkbox"
-                              name="your-services[]"
-                              value="PBX hébergé"/><span
+                              name="expertiseTech"
+                              value="expertiseTech"/><span
                               class="wpcf7-list-item-label">Expertise Technique
                             </span></label></span><br><span
                             class="wpcf7-list-item"><label><input
                             type="checkbox"
-                            name="your-services[]"
-                            value="Services infonuagiques"/><span
+                            name="conseilCyber"
+                            value="conseilCyber"/><span
                             class="wpcf7-list-item-label">Conseil en Cybersécurité</span></label></span><br><span
                             class="wpcf7-list-item"><label><input
                             type="checkbox"
-                            name="your-services[]"
-                            value="Numéro virtuel (SDA)"/><span
+                            name="surMesure"
+                            value="surMesure"/><span
                             class="wpcf7-list-item-label">Sur Mesure</span></label></span>
               </p>
               <p></p>
