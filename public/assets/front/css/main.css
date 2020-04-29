@@ -13082,17 +13082,9 @@ a img.aligncenter {
 		transition-property: color, background-color, border-color, padding-top, padding-bottom;
 		zoom: 1;
 	}
-	.sf-menu a::first-letter {
-		font-family: "Fzshuti";
-		font-size: 22px;
-		font-weight: 700;
-		letter-spacing: 0em;
-		line-height: 2.6em;
-		text-decoration: none;
+	.sf-menu a::first-letter {		
 		text-transform: uppercase;
-		-webkit-transition-property: color, background-color, border-color, padding-top, padding-bottom;
-		transition-property: color, background-color, border-color, padding-top, padding-bottom;
-		zoom: 1;
+		
 	}
 
 
