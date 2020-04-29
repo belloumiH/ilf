@@ -7745,7 +7745,7 @@ select,
 
 .ds a.fa {
 	border-color: #454545;
-	color: #55bce7;
+	color: #fff;
 }
 
 .ds a.bg-icon {
@@ -13219,7 +13219,7 @@ a img.aligncenter {
 		margin-left: 29px;
 		margin-right: 29px;
 		padding-bottom: 20px;
-		padding-top: 14px;
+		padding-top: 18px;
 	}
 
 	.nav-narrow .sf-menu > li.active > a:before {
@@ -16043,7 +16043,7 @@ a:hover {
 
 .page_title.cover-background,
 .page_title.s-parallax {
-	background-image: url("../images/gallery/gallery-06.jpg");
+	background-image: url("../images/gallery/LIFCERT.jpg");
 }
 .page_title.s-parallax.ilf {
 	background-image: url("../images/gallery/gallery-05.jpg");
