@@ -759,7 +759,7 @@ button:not([class]):hover {
 
 textarea.form-control {
 	color: #808080;
-	height: 330px;
+	height: 260px;
 	padding-top: 20px;
 }
 
@@ -7745,7 +7745,7 @@ select,
 
 .ds a.fa {
 	border-color: #454545;
-	color: #55bce7;
+	color: #fff;
 }
 
 .ds a.bg-icon {
@@ -10144,8 +10144,9 @@ widget_recent_entries
 	display: inline-block;
 	flex-grow: 10;
 	-ms-flex-positive: 10;
-	padding-bottom: 12px;
-	padding-top: 12px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	color: #808080 !important;
 }
 
 .widget_archive li > a:before,
@@ -13218,8 +13219,8 @@ a img.aligncenter {
 	.nav-narrow .sf-menu > li > a {
 		margin-left: 29px;
 		margin-right: 29px;
-		padding-bottom: 34px;
-		padding-top: 34px;
+		padding-bottom: 20px;
+		padding-top: 18px;
 	}
 
 	.nav-narrow .sf-menu > li.active > a:before {
@@ -16043,7 +16044,7 @@ a:hover {
 
 .page_title.cover-background,
 .page_title.s-parallax {
-	background-image: url("../images/gallery/gallery-06.jpg");
+	background-image: url("../images/gallery/LIFCERT.jpg");
 }
 .page_title.s-parallax.ilf {
 	background-image: url("../images/gallery/gallery-05.jpg");

@@ -10,6 +10,7 @@ use App\Entity\Post;
 use App\Entity\ScandidateSkill;
 use App\Entity\Skill;
 use App\Entity\SpontaneousCandidate;
+use App\Helper\Mail;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -189,7 +190,7 @@ class FrontController extends Controller
     {
         if ($request->isMethod('post')) {
             $data = $request->request->all();
-            Mail::send($data);
+            Mail::sendService($data);
         }
 
         return $this->render('Front/services.twig', ['languageUser' => $languageUser]);
@@ -200,6 +201,11 @@ class FrontController extends Controller
      */
     public function partenaires(Request $request, string $languageUser)
     {
+        if ($request->isMethod('post')) {
+            $data = $request->request->all();
+            Mail::sendPartenaire($data);
+        }
+
         return $this->render('Front/partenaires.twig', ['languageUser' => $languageUser]);
     }
 
