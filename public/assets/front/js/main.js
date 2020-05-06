@@ -1579,6 +1579,10 @@ $window.on('resize', function(){
 });
 
 /* Haythem Oussema adding js */
+$('.text-to-show-on').click(function(e){
+	$(this).next().css( "display", "block" );
+});
+
 $('#validatedCustomFilePostulate').change(function(e){
     var fileName = e.target.files[0].name;
     $('#validatedCustomFilePostulateLabel').text(fileName);
