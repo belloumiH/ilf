@@ -1,114 +1,115 @@
 {% extends 'Front/base.twig' %}
 {% block content %}
     <section class="page_title ilfo cs s-parallax  gradientradial-background s-py-75" style="background-position: 50% 1px;">
-                <div class="container">
-                    <div class="row">
+        <div class="container">
+            <div class="row">
 
-                        <div class="divider-50"></div>
 
-                         <div class="col-md-12 text-center">
-                    <h1 class="">Contact</h1>
-                    <ol class="breadcrumb">
+               <div class="col-md-12 text-center">
+                <h1 class="">Contact</h1>
+                <ol class="breadcrumb">
                                 <!-- <li class="breadcrumb-item">
                                 </li>
 
                                 <li class="breadcrumb-item active">
                                 </li> -->
-                              </ol>
-                    
+                            </ol>
+                            
+
+                        </div>
+                        <div class="divider-50"></div>
 
                     </div>
-                </div>
-            </section>
-   
-    <section class="s-pt-75">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="ls ms page_map" data-draggable="true" data-scrollwheel="true">
-                        <div class="marker">
-                            <div class="marker-address">22-30 Rue Georges, 92250 La Garenne-Colombes, France</div>
-                            <div class="marker-title">Ilf consulting</div>
-                            <div class="marker-description">
-                                <ul class="list-unstyled">
-                                    <li>
-                                        <span class="icon-inline">
-                                            <span class="icon-styled color-main">
-                                                <i class="fa fa-map-marker"></i>
-                                            </span>
-                                            <span>
-                                                22-30 Rue Georges, 92250 La Garenne-Colombes, France
-                                            </span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="icon-inline">
-                                            <span class="icon-styled color-main">
-                                                <i class="fa fa-phone"></i>
-                                            </span>
-                                            <span>
-                                                01 43 32 93 41
-                                            </span>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <span class="icon-inline">
-                                            <span class="icon-styled color-main">
-                                                <i class="fa fa-envelope"></i>
-                                            </span>
-                                            <span>
-                                                contact@ilfconsulting.fr
-                                            </span>
-                                        </span>
-                                    </li>
-                                </ul>
+                </section>
+                
+                <section class="s-pt-75">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="ls ms page_map" data-draggable="true" data-scrollwheel="true">
+                                    <div class="marker">
+                                        <div class="marker-address">22-30 Rue Georges, 92250 La Garenne-Colombes, France</div>
+                                        <div class="marker-title">Ilf consulting</div>
+                                        <div class="marker-description">
+                                            <ul class="list-unstyled">
+                                                <li>
+                                                    <span class="icon-inline">
+                                                        <span class="icon-styled color-main">
+                                                            <i class="fa fa-map-marker"></i>
+                                                        </span>
+                                                        <span>
+                                                            22-30 Rue Georges, 92250 La Garenne-Colombes, France
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-inline">
+                                                        <span class="icon-styled color-main">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                        <span>
+                                                            01 43 32 93 41
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="icon-inline">
+                                                        <span class="icon-styled color-main">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                        <span>
+                                                            contact@ilfconsulting.fr
+                                                        </span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <img class="marker-icon" src="{{ asset('assets/front/images/map_marker_icon.png') }}" alt="">
+                                    </div>
+                                    <!-- .marker -->
+                                </div>
                             </div>
-                            <img class="marker-icon" src="{{ asset('assets/front/images/map_marker_icon.png') }}" alt="">
                         </div>
-                        <!-- .marker -->
                     </div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=FR&key=AIzaSyCURHk83p1kJrOKhFFdJYY9oHwp6tIuvx8"></script>
-    </section>
-    <section class="ls s-py-75">
-        <div class="container">
-            <div class="row ">
-                <div class="col-sm-4 divider-40 animate" data-animation="pullDown">
-                    <div class="icon-box text-center contact-icon">
-                        <div class="icon-styled bg-maincolor">
-                            <i class="fa fa-phone"></i>
+                    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?language=FR&key=AIzaSyCURHk83p1kJrOKhFFdJYY9oHwp6tIuvx8"></script>
+                </section>
+                <section class="ls s-py-75">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-sm-4 divider-40 animate" data-animation="pullDown">
+                                <div class="icon-box text-center contact-icon">
+                                    <div class="icon-styled bg-maincolor">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <p>
+                                        <strong>Phone:</strong> 01 43 32 93 41
+                                        <br>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 divider-40 animate" data-animation="pullDown">
+                                <div class="icon-box text-center contact-icon">
+                                    <div class="icon-styled bg-maincolor">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <p>
+                                        22-30 Rue Georges,
+                                        <br> 92250 La Garenne-Colombes,
+                                        <br> France
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 pb-60 divider-40 animate" data-animation="pullDown">
+                                <div class="icon-box text-center contact-icon">
+                                    <div class="icon-styled bg-maincolor">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <p>
+                                        <a href="#">contact@ilfconsulting.fr</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            <strong>Phone:</strong> 01 43 32 93 41
-                            <br>
-                        </p>
                     </div>
-                </div>
-                <div class="col-sm-4 divider-40 animate" data-animation="pullDown">
-                    <div class="icon-box text-center contact-icon">
-                        <div class="icon-styled bg-maincolor">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <p>
-                            22-30 Rue Georges,
-                            <br> 92250 La Garenne-Colombes,
-                            <br> France
-                        </p>
-                    </div>
-                </div>
-                <div class="col-sm-4 pb-60 divider-40 animate" data-animation="pullDown">
-                    <div class="icon-box text-center contact-icon">
-                        <div class="icon-styled bg-maincolor">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <p>
-                            <a href="#">contact@ilfconsulting.fr</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
+                </section>
+            {% endblock %}

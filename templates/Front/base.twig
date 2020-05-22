@@ -24,6 +24,7 @@
         <link rel="stylesheet" href="{{ asset('assets/front/css/main.css') }}" class="color-switcher-link">
         <script src="{{ asset('assets/front/js/vendor/modernizr-2.6.2.min.js') }}"></script>
         <link rel="stylesheet" href="{{ asset('assets/front/newbloc/vendors/linericon/style.css') }}">
+        {% block css %}{% endblock %}
 
     <!--[if lt IE 9]>
         <script src="{{ asset('assets/front/js/vendor/html5shiv.min.js') }}"></script>
@@ -115,7 +116,7 @@
                     </div>
                     
                 </section>
-                <header class="page_header ls s-bordertop nav-narrow justify-nav-center text-center">
+                <header class="page_header  ls s-bordertop nav-narrow justify-nav-center text-center" style="">
                     <div class="container-fluid">
                         <div class="row align-items-center">
                             <div class="col-xl-12">
@@ -140,7 +141,7 @@
                                             <li> <a href="{{ path('front.services',{'languageUser' : languageUser }) }}">Nos Services</a></li>
 
                                             <li>
-                                                <a href="https://www.talentlif.com/"><span>Talent <span>l<span>i<span>f</span></span></span></span></a>
+                                                <a href="https://www.talentlif.com/">Talent LIF</a>
 
                                             </li>
 
@@ -180,32 +181,33 @@
                     <footer class="page_footer ds s-py-sm-20 s-pt-md-75 s-pb-md-50 s-py-lg-130 c-gutter-60 pb-20 half-section">
                         <div class="container no-padding">
                             <div class="row">
-                                <div class="col-md-4 animate animated fadeInUp" data-animation="fadeInUp">
+                                <div class="col-md-4 animate animated fadeInUp  text-center text-md-left" data-animation="fadeInUp">
                                     <div class="widget widget_categories">
                                         <h3 class="widget-title">Accés Rapide</h3>
                                         <ul>
                                             <li class="cat-item">
-                                                <a href="blog-right.html">Le groupe</a>
+                                                <a href="{{ path('front.group',{'languageUser' : languageUser }) }}">Le groupe</a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="blog-right.html">Nos Services</a>
+                                                <a href="{{ path('front.services',{'languageUser' : languageUser }) }}">Nos Services</a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="blog-right.html">Talent LIF</a>
+                                                <a href="https://www.talentlif.com/">Talent LIF</a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="blog-right.html">Nos partenariats</a>
+                                                <a href="{{ path('front.partenaires',{'languageUser' : languageUser }) }}">Nos partenariats</a>
                                             </li>
                                             <li class="cat-item">
-                                                <a href="blog-right.html">Contact</a>
+                                                <a href="{{ path('front.contact') }}">Contact</a>
 
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="footer  col-md-4 animate" data-animation="fadeInUp" >
-                                    <div class="author-social" style="margin-top:120px;    margin-left: 25%;">
-                                        <a href="#" class="fa fa-facebook color-bg-icon rounded-icon"></a>
+                                <div class="footer  col-md-4 animate text-center" data-animation="fadeInUp" >
+                                    <div class="widget author-social" >
+                                        <h3 class="widget-title" style="">SUIVEZ-NOUS</h3>
+                                        <a href="#" class="fa fa-youtube color-bg-icon rounded-icon mt-4"></a>
                                         <a href="#" class="fa fa-twitter color-bg-icon rounded-icon"></a>
                                         <a href="https://www.linkedin.com/company/ilfconsulting-fr" class="fa fa-linkedin color-bg-icon rounded-icon"></a>
                                     </div>
@@ -270,6 +272,7 @@
 <!-- eof #box_wrapper -->
 </div>
 <!-- eof #canvas -->
+{% block javascripts %}{% endblock %}
 <script src="{{ asset('assets/front/js/compressed.js') }}"></script>
 <script src="{{ asset('assets/front/js/main.js') }}"></script>
 <script src="{{ asset('assets/front/js/switcher.js') }}"></script>
