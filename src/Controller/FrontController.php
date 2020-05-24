@@ -113,11 +113,12 @@ class FrontController extends Controller
                         $this->getParameter('uploads_private_directory'),
                         $fileName
                     );
-                    $fileNameAws = $this->get('aws_storage')->uploadFile(
-                        $this->getParameter('uploads_private_directory').'/'.$fileName,
-                        'recruilf/'
-                    );
-                    unlink($this->getParameter('uploads_private_directory').'/'.$fileName);
+                    $fileNameAws = $fileName;
+                    // $fileNameAws = $this->get('aws_storage')->uploadFile(
+                    //     $this->getParameter('uploads_private_directory').'/'.$fileName,
+                    //     'recruilf/'
+                    // );
+                    // unlink($this->getParameter('uploads_private_directory').'/'.$fileName);
                 } catch (Exception $e) {
                     $fileNameAws = null;
                 }
