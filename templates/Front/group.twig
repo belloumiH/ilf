@@ -1,16 +1,19 @@
 {% extends 'Front/base.twig' %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('assets/front/css/styles.css') }}">
+{% endblock %}
 {% block content %}
 
-    <section class="page_title nous cs s-parallax  gradientradial-background s-py-50"
-             style="background-position: 50% 2px;">
-        <div class="container">
-            <div class="row">
+    <section class="page_title nous cs s-parallax  gradientradial-background s-py-75"
+    style="background-position: 50% 2px;">
+    <div class="container">
+        <div class="row">
 
-                <div class="divider-50"></div>
+            <div class="divider-50"></div>
 
-                <div class="col-md-12 text-center">
-                    <h1 class="">LE GROUPE</h1>
-                    <ol class="breadcrumb">
+            <div class="col-md-12 text-center">
+                <h1 class="">LE GROUPE</h1>
+                <ol class="breadcrumb">
                         <!-- <li class="breadcrumb-item">
                         </li>
 
@@ -36,7 +39,7 @@
                     <p>
                         Fondé en 2018 par deux consultants seniors experts et passionnés par l’informatique et les
                         nouvelles technologies, le groupe ILF propose un panel complet de services de conseil, expertise
-                        technique, recrutement des talents, formations et certifications en: ​
+                        technique, recrutement des talents, formation & certification en: ​
                     </p>
                     <ul class="list1">
                         <li>
@@ -78,7 +81,7 @@
                         topologie spécifique à chaque société, nous sommes en mesure d’apporter notre expertise.
                         <br>
                         <strong>Notre équipe</strong> est constituée d’experts passionnés, spécialisés en cybersécurité,
-                        cloud et infrastructures réseau.
+                        cloud et infrastructures réseaux.
                         <br>
                         Issus des meilleures formations et possédons les meilleures certifications du marché: CISM,
                         CISSP, CISA, CPP, ISO27001 LA, ISO 27001 LI, ISO 27005 RM, EBIOS RM, ISO22301 LI, Lead SCADA SM,
@@ -86,8 +89,8 @@
                         recrutement exigeant.
                     </p>
                 </div>
-                <div class="col-md-5 my-30">
-                    <img src="{{ asset('assets/front/img/about-us.jpg') }}" alt="">
+                <div class="col-md-5 mt-60">
+                    <img class=" mt-10" src="{{ asset('assets/front/img/souslide.jpg') }}" alt="">
                 </div>
             </div>
 
@@ -103,79 +106,161 @@
                         IT/OT/ICS/systèmes industriels, incluant le conseil, l’expertise technique, le recrutement des
                         talents, et encore la formation et la certification des entreprises et des professionnels.
                     </p>
-                    <p>
-                        <strong>Découvrez les entités qui forment le groupe d’experts ILF</strong>
-                    </p>
-                    <div class="owl-carousel pt-30"
-                         data-responsive-lg="4"
-                         data-responsive-md="4"
-                         data-responsive-sm="2"
-                         data-nav="false"
-                         data-dots="false">
-                        <article
-                                class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
-                            <div class="item-media post-thumbnail style-img-group text-to-show-on">
-                                <img src="{{ asset('assets/front/img/b1.png') }}" alt="">
-                            </div>
-                            <div class="entry-content ls" style="padding-top: 15px; display:none">
-                                <p>
-                                    ILF Consulting  est un cabinet de conseil et d’expertise technique en services
-                                    cloud, infrastructures sécurisés, gouvernance, gestion des risques et conformité
-                                    SSI, Ingénierie et assistance à l’exploitation SOC/ CERT (IT & OT), prestations
-                                    d’audits, tests d’intrusion et sécurité des systèmes industriels, ICS, IIOT. En
-                                    savoir plus (lien site ILF Consulting)
-                                </p>
-                            </div>
-                        </article>
-                        <article
-                                class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
-                            <div class="item-media post-thumbnail style-img-group text-to-show-on">
-                                <img src="{{ asset('assets/front/img/b2.png') }}" alt="">
-                            </div>
-                            <div class="entry-content ls" style="padding-top: 15px; display:none">
-                                <p>
-                                    Talent lif est un cabinet de recrutement de profils IT multidisciplinaires pour ses
-                                    clients en Europe (France, Belgique, Luxembourg, UK) à travers ses 03 unités: Talent
-                                    Partner, Talent Hunt et Talent As a service.
-                                    Basé à Tunis, et bientôt à Casa et Dakar, Talent lif est l’entité de recrutement du
-                                    Groupe ILF. En savoir plus (lien site Talent LIF)
-                                </p>
-                            </div>
-                        </article>
-                        <article
-                                class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
-                            <div class="item-media post-thumbnail style-img-group text-to-show-on">
-                                <img src="{{ asset('assets/front/img/b2.png') }}" alt="">
-                            </div>
-                            <div class="entry-content ls" style="padding-top: 15px; display:none">
-                                <p>
-                                    LIFS est l’entité de services IT du groupe ILF.
-                                    LIFS propose à travers ses 04 unités (LIFsoc, LIFcert, LIFcloud et LIFdev) des
-                                    prestations d’expertise technique, intégration, support et assistance en
-                                    infrastructures, cloud et cybersécurité. En savoir plus (lien site LIF Africa)
-                                </p>
-                            </div>
-                        </article>
-                        <article
-                                class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
-                            <div class="item-media post-thumbnail style-img-group text-to-show-on">
-                                <img src="{{ asset('assets/front/img/b1.png') }}" alt="">
-                            </div>
-                            <div class="entry-content ls" style="padding-top: 15px; display:none">
-                                <p>
-                                    Booster-TEK est la structure de formation et certification IT du groupe ILF.
-                                    Booster-TEK propose des Formations inter /intra-entreprises, séminaires et
-                                    certifications IT pour les entreprises et les professionnels de l'informatique. En
-                                    savoir plus (lien site Booster-TEK)
-                                </p>
-                            </div>
-                        </article>
+                 {#    <div class="text-center">
+                        <p style="font-size: 30px;">
+                            <strong>Découvrez les entités qui forment le groupe d’experts ILF</strong>
+                        </p>
                     </div>
+                    <div class="owl-carousel pt-30"
+                    data-responsive-lg="4"
+                    data-responsive-md="4"
+                    data-responsive-sm="2"
+                    data-nav="false"
+                    data-dots="false">
+                    <article
+                    class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
+                    <div class="item-media icon-boxed post-thumbnail style-img-group text-to-show-on">
+                        <img src="{{ asset('assets/front/img/b1.png') }}" alt="">
+                    </div>
+                    <div class="entry-content ls" style="padding-top: 15px; display:none">
+                        <p>
+                            ILF Consulting  est un cabinet de conseil et d’expertise technique en services
+                            cloud, infrastructures sécurisés, gouvernance, gestion des risques et conformité
+                            SSI, Ingénierie et assistance à l’exploitation SOC/ CERT (IT & OT), prestations
+                            d’audits, tests d’intrusion et sécurité des systèmes industriels, ICS, IIOT. En
+                            savoir plus (lien site ILF Consulting)
+                        </p>
+                    </div>
+                </article>
+                <article
+                class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
+                <div class="item-media icon-boxed post-thumbnail style-img-group text-to-show-on">
+                    <img src="{{ asset('assets/front/img/b2.png') }}" alt="">
                 </div>
+                <div class="entry-content ls" style="padding-top: 15px; display:none">
+                    <p>
+                        Talent lif est un cabinet de recrutement de profils IT multidisciplinaires pour ses
+                        clients en Europe (France, Belgique, Luxembourg, UK) à travers ses 03 unités: Talent
+                        Partner, Talent Hunt et Talent As a service.
+                        Basé à Tunis, et bientôt à Casa et Dakar, Talent lif est l’entité de recrutement du
+                        Groupe ILF. En savoir plus (lien site Talent LIF)
+                    </p>
+                </div>
+            </article>
+            <article
+            class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
+            <div class="item-media icon-boxed post-thumbnail style-img-group text-to-show-on">
+                <img src="{{ asset('assets/front/img/b3.png') }}" alt="">
             </div>
+            <div class="entry-content ls" style="padding-top: 15px; display:none">
+                <p>
+                    LIFS est l’entité de services IT du groupe ILF.
+                    LIFS propose à travers ses 04 unités (LIFsoc, LIFcert, LIFcloud et LIFdev) des
+                    prestations d’expertise technique, intégration, support et assistance en
+                    infrastructures, cloud et cybersécurité. En savoir plus (lien site LIF Africa)
+                </p>
+            </div>
+        </article>
+        <article
+        class="box vertical-item text-center content-padding padding-small bordered post type-post status-publish format-standard has-post-thumbnail">
+        <div class="item-media icon-boxed post-thumbnail style-img-group text-to-show-on">
+         <img src="{{ asset('assets/front/img/b4.png') }}" alt="">
+     </div>
+     <div class="entry-content ls" style="padding-top: 15px; display:none">
 
+        <p>
+            Booster-TEK est la structure de formation et certification IT du groupe ILF.
+            Booster-TEK propose des Formations inter /intra-entreprises, séminaires et
+            certifications IT pour les entreprises et les professionnels de l'informatique. En
+            savoir plus (lien site Booster-TEK)
+        </p>
+    </div>
+</article>
+</div> #}
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="Services" class="content-section text-center">
+  <div class="container">
+    <div class="block-heading">
+      <h3>Découvrez les filiales qui forment le groupe d’experts ILF</h3>
+{#       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+   #}    </div>
+   <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="service-box">
+          <div class="service-icon red">
+            <div class="front-content"><i class="fa fa-globe" aria-hidden="true"></i>
+              <h3>ILF Consulting</h3>
+          </div>
+      </div>
+      <div class="service-content">
+        <h3>ILF Consulting</h3>
+        <p>ILF Consulting  est un cabinet de conseil et d’expertise technique en services
+            cloud, infrastructures sécurisés, gouvernance, gestion des risques et conformité
+            SSI, Ingénierie et assistance à l’exploitation SOC/ CERT (IT & OT), prestations
+            d’audits, tests d’intrusion et sécurité des systèmes industriels, ICS, IIOT.</p>
+            <a href="{{ path('front.index',{'languageUser' : languageUser }) }}" class="btn btn-secondary">En savoir plus</a>
         </div>
-    </section>
+    </div>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="service-box">
+      <div class="service-icon red">
+        <div class="front-content"><i class="fa fa-suitcase"></i>
+          <h3>Talent LIF</h3>
+      </div>
+  </div>
+  <div class="service-content">
+    <h3>Talent LIF</h3>
+    <p>Talent lif est un cabinet de recrutement de profils IT multidisciplinaires pour ses
+        clients en Europe (France, Belgique, Luxembourg, UK) à travers ses 03 unités: Talent
+        Partner, Talent Hunt et Talent As a service.
+        Basé à Tunis, et bientôt à Casa et Dakar, Talent lif est l’entité de recrutement du
+        Groupe ILF.</p>
+        <a href="https://www.talentlif.com/" class="btn btn-secondary">En savoir plus</a>
+    </div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="service-box">
+      <div class="service-icon red">
+        <div class="front-content"><i class="fa fa-server" aria-hidden="true"></i>
+          <h3>LIF Services</h3>
+      </div>
+  </div>
+  <div class="service-content">
+    <h3>LIF Services</h3>
+    <p>LIF Services est l’entité de services IT du groupe ILF.
+        LIFS propose à travers ses 04 unités (LIFsoc, LIFcert, LIFcloud et LIFdev) des
+        prestations d’expertise technique, intégration, support et assistance en
+        infrastructures, cloud et cybersécurité.</p>
+        <a href="{{ path('front.services',{'languageUser' : languageUser }) }}" class="btn btn-secondary">En savoir plus</a>
+    </div>
+</div>
+</div>
+<div class="col-md-3 col-sm-6">
+    <div class="service-box">
+      <div class="service-icon red">
+        <div class="front-content"><i class="fa fa-users"></i>
+          <h3>Booster-TEK</h3>
+      </div>
+  </div>
+  <div class="service-content">
+    <h3>Booster-TEK</h3>
+    <p>Booster-TEK est la structure de formation et certification IT du groupe ILF.
+        Booster-TEK propose des Formations inter /intra-entreprises, séminaires et
+        certifications IT pour les entreprises et les professionnels de l'informatique.</p>
+        <a href="{{ path('front.services',{'languageUser' : languageUser }) }}" class="btn btn-secondary">En savoir plus</a>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>
 
 
 {% endblock %}
