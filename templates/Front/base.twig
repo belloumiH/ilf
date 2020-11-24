@@ -80,9 +80,10 @@
 
         <!--eof topline-->
 
-        <section class="page_toplogo  ls  text-center">
+        <section class="page_toplogo  ls">
             <div class="container-fluid">
                 <div class="row align-items-center">
+{#
                     <div class="col-lg-4">
                         <div class="d-lg-flex align-items-lg-center">
                          <!--        <span class="social-icons top">
@@ -90,8 +91,9 @@
                                 </span> -->
                             </div>
                         </div>
-                        <div class="col-lg-4 text-center">
-                            <div class="text-center">
+#}
+                        <div class="col-lg-4">
+                            <div class="">
                                 <div class="header_logo_center">
                                     <img width="150px" height="100px" src="{{ asset('assets/front/images/logoupe.png') }}" alt="ilf-consulting">
 
@@ -140,10 +142,10 @@
 
                                             <li> <a href="{{ path('front.services',{'languageUser' : languageUser }) }}">Nos Services</a></li>
 
-                                            <li>
+                                       {#     <li>
                                                 <a href="https://www.talentlif.com/">Talent LIF</a>
 
-                                            </li>
+                                            </li>#}
 
 
                                             <li> <a href="{{ path('front.partenaires',{'languageUser' : languageUser }) }}">Nos Partenariats</a> </li>
@@ -191,9 +193,9 @@
                                             <li class="cat-item">
                                                 <a href="{{ path('front.services',{'languageUser' : languageUser }) }}">Nos Services</a>
                                             </li>
-                                            <li class="cat-item">
+                                       {#     <li class="cat-item">
                                                 <a href="https://www.talentlif.com/">Talent LIF</a>
-                                            </li>
+                                            </li>#}
                                             <li class="cat-item">
                                                 <a href="{{ path('front.partenaires',{'languageUser' : languageUser }) }}">Nos partenariats</a>
                                             </li>
