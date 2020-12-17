@@ -58,11 +58,11 @@ front.lif:
   defaults:
     languageUser : 'fr'
 
-front.talentlif:
-  path: /talentlif
-  controller: App\Controller\FrontController::talentlif
-  defaults:
-    languageUser : 'fr'
+#front.talentlif:
+#  path: /talentlif
+#  controller: App\Controller\FrontController::talentlif
+#  defaults:
+#    languageUser : 'fr'
 
 front.insert.spontanious:
   path: /insert-spontanious
